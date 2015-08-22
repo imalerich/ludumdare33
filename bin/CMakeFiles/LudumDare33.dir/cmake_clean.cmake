@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/LudumDare33.dir/objects/carspawner.cpp.obj"
   "CMakeFiles/LudumDare33.dir/objects/car.cpp.obj"
   "CMakeFiles/LudumDare33.dir/math/vector2.cpp.obj"
+  "CMakeFiles/LudumDare33.dir/ui/healthbar.cpp.obj"
   "LudumDare33.pdb"
   "LudumDare33.exe"
   "LudumDare33.exe.manifest"

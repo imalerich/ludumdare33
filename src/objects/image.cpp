@@ -30,3 +30,19 @@ void IMAGE::draw(VECTOR2 pos, double rot) {
 void IMAGE::draw(VECTOR2 pos, VECTOR2 center, double rot) {
 	al_draw_rotated_bitmap(image, center.x, center.y, pos.x + center.x - camera.pos.x, pos.y + center.y - camera.pos.y, rot, 0);
 }
+
+void IMAGE::draw(VECTOR2 pos, double rot, double scale) {
+	al_draw_scaled_rotated_bitmap(image, size.x/2.0, size.y/2.0, pos.x + size.x/2.0 - camera.pos.x , pos.y + size.y/2.0 - camera.pos.y, scale, scale, rot, 0);
+}
+
+void IMAGE::draw(VECTOR2 pos, double rot, double scaleX, double scaleY) {
+	al_draw_scaled_rotated_bitmap(image, size.x/2.0, size.y/2.0, pos.x + size.x/2.0 - camera.pos.x , pos.y + size.y/2.0 - camera.pos.y, scaleX, scaleY, rot, 0);
+}
+
+void IMAGE::draw(VECTOR2 pos, VECTOR2 center, double rot, double scale) {
+	al_draw_scaled_rotated_bitmap(image, center.x, center.y, pos.x + center.x - camera.pos.x , pos.y + center.y - camera.pos.y, scale, scale, rot, 0);
+}
+
+void IMAGE::draw(VECTOR2 pos, VECTOR2 center, double rot, double scaleX, double scaleY) {
+	al_draw_scaled_rotated_bitmap(image, center.x, center.y, pos.x + center.x - camera.pos.x , pos.y + center.y - camera.pos.y, scaleX, scaleY, rot, 0);
+}

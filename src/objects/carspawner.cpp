@@ -33,7 +33,7 @@ void CARSPAWNER::draw(int lane) {
 		if (pos.y == lane) {
 			pos.y = max_y - (pos.y * height) - height;
 			pos.y += it->y_offset;
-			image->draw(pos);
+			image->draw(pos, it->rotation, it->scale);
 		}
 	}
 }
@@ -53,7 +53,7 @@ void CARSPAWNER::update() {
 		if (it->is_falling) {
 			it->update();
 		} else {
-			it->pos.x -= (1.0 / FRAME_RATE) * 200;
+			it->pos.x -= (1.0 / FRAME_RATE) * 400;
 		}
 	}
 }
@@ -64,7 +64,10 @@ void CARSPAWNER::checkCarStomps(MONSTER * monster) {
 	}
 
 	for (std::vector<CAR>::iterator it = cars.begin(); it != cars.end(); it++) {
-		if (it->pos.x < monster->pos.x + monster->size.x && !it->is_falling) {
+		if (it->pos.x < monster->pos.x + monster->size.x && 
+			it->pos.x + image->size.x > monster->pos.x &&
+			(int)it->pos.y == monster->current_lane &&
+			!it->is_falling) {
 			double speed = 1500;
 			double r = ((rand() % 1000)/1000.0) * (2 * M_PI);
 

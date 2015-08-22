@@ -393,6 +393,8 @@ objects/camera.h
 C:/Users/ianma/Development/ludumdare33/src/objects/camera.h
 objects/carspawner.h
 C:/Users/ianma/Development/ludumdare33/src/objects/carspawner.h
+ui/healthbar.h
+C:/Users/ianma/Development/ludumdare33/src/ui/healthbar.h
 math/vector2.h
 C:/Users/ianma/Development/ludumdare33/src/math/vector2.h
 
@@ -429,6 +431,10 @@ C:/Users/ianma/Development/ludumdare33/src/math/vector2.h
 C:/Users/ianma/Development/ludumdare33/src/objects/car.cpp
 car.h
 C:/Users/ianma/Development/ludumdare33/src/objects/car.h
+cmath
+-
+iostream
+-
 
 C:/Users/ianma/Development/ludumdare33/src/objects/car.h
 ../gameprefix.h
@@ -500,6 +506,18 @@ C:/Users/ianma/Development/ludumdare33/src/gameprefix.h
 ../math/vector2.h
 C:/Users/ianma/Development/ludumdare33/src/math/vector2.h
 image.h
+C:/Users/ianma/Development/ludumdare33/src/objects/image.h
+
+C:/Users/ianma/Development/ludumdare33/src/ui/healthbar.cpp
+healthbar.h
+C:/Users/ianma/Development/ludumdare33/src/ui/healthbar.h
+../objects/camera.h
+C:/Users/ianma/Development/ludumdare33/src/objects/camera.h
+
+C:/Users/ianma/Development/ludumdare33/src/ui/healthbar.h
+../gameprefix.h
+C:/Users/ianma/Development/ludumdare33/src/gameprefix.h
+../objects/image.h
 C:/Users/ianma/Development/ludumdare33/src/objects/image.h
 
 LudumDare33Config.h

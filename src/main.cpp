@@ -8,6 +8,7 @@
 #include "objects/background.h"
 #include "objects/camera.h"
 #include "objects/carspawner.h"
+#include "ui/healthbar.h"
 #include "math/vector2.h"
 
 int main(int argc, char **argv) {
@@ -30,6 +31,7 @@ int main(int argc, char **argv) {
 	BACKGROUND * bg_0 = new BACKGROUND("assets/map/background_0.png");
 	BACKGROUND * bg_1 = new BACKGROUND("assets/map/background_1.png");
 	BACKGROUND * street = new BACKGROUND("assets/map/street.png");
+	HEALTHBAR * health = new HEALTHBAR();
 
 	double min_y = SCREENH - street->image->size.y;
 	double max_y = SCREENH - 63;
@@ -94,6 +96,8 @@ int main(int argc, char **argv) {
 					player->draw();
 			}
 
+			health->draw();
+
 			al_flip_display();
 		}
 	}
@@ -103,6 +107,7 @@ int main(int argc, char **argv) {
 	delete bg_1;
 	delete street;
 	delete spawner;
+	delete health;
 
 	release_allegro();
 	return 0;

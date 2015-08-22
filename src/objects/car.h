@@ -13,6 +13,9 @@ public:
 	VECTOR2 fall_direction;
 	bool is_falling;
 
+	double rotation;
+	double scale;
+
 	void update();
 };
 

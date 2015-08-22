@@ -409,6 +409,33 @@ objects/monster.cpp.s:
 	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/objects/monster.cpp.s
 .PHONY : objects/monster.cpp.s
 
+ui/healthbar.obj: ui/healthbar.cpp.obj
+
+.PHONY : ui/healthbar.obj
+
+# target to build an object file
+ui/healthbar.cpp.obj:
+	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/ui/healthbar.cpp.obj
+.PHONY : ui/healthbar.cpp.obj
+
+ui/healthbar.i: ui/healthbar.cpp.i
+
+.PHONY : ui/healthbar.i
+
+# target to preprocess a source file
+ui/healthbar.cpp.i:
+	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/ui/healthbar.cpp.i
+.PHONY : ui/healthbar.cpp.i
+
+ui/healthbar.s: ui/healthbar.cpp.s
+
+.PHONY : ui/healthbar.s
+
+# target to generate assembly for a file
+ui/healthbar.cpp.s:
+	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/ui/healthbar.cpp.s
+.PHONY : ui/healthbar.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -449,6 +476,9 @@ help:
 	@echo ... objects/monster.obj
 	@echo ... objects/monster.i
 	@echo ... objects/monster.s
+	@echo ... ui/healthbar.obj
+	@echo ... ui/healthbar.i
+	@echo ... ui/healthbar.s
 .PHONY : help
 
 

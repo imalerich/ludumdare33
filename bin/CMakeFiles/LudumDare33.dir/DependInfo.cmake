@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/ianma/Development/ludumdare33/src/objects/carspawner.cpp" "C:/Users/ianma/Development/ludumdare33/bin/CMakeFiles/LudumDare33.dir/objects/carspawner.cpp.obj"
   "C:/Users/ianma/Development/ludumdare33/src/objects/image.cpp" "C:/Users/ianma/Development/ludumdare33/bin/CMakeFiles/LudumDare33.dir/objects/image.cpp.obj"
   "C:/Users/ianma/Development/ludumdare33/src/objects/monster.cpp" "C:/Users/ianma/Development/ludumdare33/bin/CMakeFiles/LudumDare33.dir/objects/monster.cpp.obj"
+  "C:/Users/ianma/Development/ludumdare33/src/ui/healthbar.cpp" "C:/Users/ianma/Development/ludumdare33/bin/CMakeFiles/LudumDare33.dir/ui/healthbar.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

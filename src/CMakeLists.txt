@@ -33,6 +33,7 @@ add_executable(LudumDare33
 	objects/carspawner.cpp
 	objects/car.cpp
 	math/vector2.cpp
+	ui/healthbar.cpp
 )
 
 # Include Allegro libraries

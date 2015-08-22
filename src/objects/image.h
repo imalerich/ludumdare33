@@ -12,6 +12,10 @@ public:
 	void draw(VECTOR2 pos);
 	void draw(VECTOR2 pos, double rot);
 	void draw(VECTOR2 pos, VECTOR2 center, double rot);
+	void draw(VECTOR2 pos, double rot, double scale);
+	void draw(VECTOR2 pos, double rot, double scaleX, double scaleY);
+	void draw(VECTOR2 pos, VECTOR2 center, double rot, double scale);
+	void draw(VECTOR2 pos, VECTOR2 center, double rot, double scaleX, double scaleY);
 	VECTOR2 size;
 
 private:
