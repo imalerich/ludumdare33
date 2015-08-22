@@ -156,10 +156,60 @@ CMakeFiles/LudumDare33.dir/objects/monster.cpp.obj.provides: CMakeFiles/LudumDar
 CMakeFiles/LudumDare33.dir/objects/monster.cpp.obj.provides.build: CMakeFiles/LudumDare33.dir/objects/monster.cpp.obj
 
 
+CMakeFiles/LudumDare33.dir/objects/background.cpp.obj: CMakeFiles/LudumDare33.dir/flags.make
+CMakeFiles/LudumDare33.dir/objects/background.cpp.obj: CMakeFiles/LudumDare33.dir/includes_CXX.rsp
+CMakeFiles/LudumDare33.dir/objects/background.cpp.obj: C:/Users/ianma/Development/ludumdare33/src/objects/background.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ianma\Development\ludumdare33\bin\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/LudumDare33.dir/objects/background.cpp.obj"
+	C:\MinGW\bin\g++.exe   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles\LudumDare33.dir\objects\background.cpp.obj -c C:\Users\ianma\Development\ludumdare33\src\objects\background.cpp
+
+CMakeFiles/LudumDare33.dir/objects/background.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LudumDare33.dir/objects/background.cpp.i"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_FLAGS) -E C:\Users\ianma\Development\ludumdare33\src\objects\background.cpp > CMakeFiles\LudumDare33.dir\objects\background.cpp.i
+
+CMakeFiles/LudumDare33.dir/objects/background.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LudumDare33.dir/objects/background.cpp.s"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_FLAGS) -S C:\Users\ianma\Development\ludumdare33\src\objects\background.cpp -o CMakeFiles\LudumDare33.dir\objects\background.cpp.s
+
+CMakeFiles/LudumDare33.dir/objects/background.cpp.obj.requires:
+
+.PHONY : CMakeFiles/LudumDare33.dir/objects/background.cpp.obj.requires
+
+CMakeFiles/LudumDare33.dir/objects/background.cpp.obj.provides: CMakeFiles/LudumDare33.dir/objects/background.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/objects/background.cpp.obj.provides.build
+.PHONY : CMakeFiles/LudumDare33.dir/objects/background.cpp.obj.provides
+
+CMakeFiles/LudumDare33.dir/objects/background.cpp.obj.provides.build: CMakeFiles/LudumDare33.dir/objects/background.cpp.obj
+
+
+CMakeFiles/LudumDare33.dir/objects/camera.cpp.obj: CMakeFiles/LudumDare33.dir/flags.make
+CMakeFiles/LudumDare33.dir/objects/camera.cpp.obj: CMakeFiles/LudumDare33.dir/includes_CXX.rsp
+CMakeFiles/LudumDare33.dir/objects/camera.cpp.obj: C:/Users/ianma/Development/ludumdare33/src/objects/camera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ianma\Development\ludumdare33\bin\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/LudumDare33.dir/objects/camera.cpp.obj"
+	C:\MinGW\bin\g++.exe   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles\LudumDare33.dir\objects\camera.cpp.obj -c C:\Users\ianma\Development\ludumdare33\src\objects\camera.cpp
+
+CMakeFiles/LudumDare33.dir/objects/camera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LudumDare33.dir/objects/camera.cpp.i"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_FLAGS) -E C:\Users\ianma\Development\ludumdare33\src\objects\camera.cpp > CMakeFiles\LudumDare33.dir\objects\camera.cpp.i
+
+CMakeFiles/LudumDare33.dir/objects/camera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LudumDare33.dir/objects/camera.cpp.s"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_FLAGS) -S C:\Users\ianma\Development\ludumdare33\src\objects\camera.cpp -o CMakeFiles\LudumDare33.dir\objects\camera.cpp.s
+
+CMakeFiles/LudumDare33.dir/objects/camera.cpp.obj.requires:
+
+.PHONY : CMakeFiles/LudumDare33.dir/objects/camera.cpp.obj.requires
+
+CMakeFiles/LudumDare33.dir/objects/camera.cpp.obj.provides: CMakeFiles/LudumDare33.dir/objects/camera.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/objects/camera.cpp.obj.provides.build
+.PHONY : CMakeFiles/LudumDare33.dir/objects/camera.cpp.obj.provides
+
+CMakeFiles/LudumDare33.dir/objects/camera.cpp.obj.provides.build: CMakeFiles/LudumDare33.dir/objects/camera.cpp.obj
+
+
 CMakeFiles/LudumDare33.dir/math/vector2.cpp.obj: CMakeFiles/LudumDare33.dir/flags.make
 CMakeFiles/LudumDare33.dir/math/vector2.cpp.obj: CMakeFiles/LudumDare33.dir/includes_CXX.rsp
 CMakeFiles/LudumDare33.dir/math/vector2.cpp.obj: C:/Users/ianma/Development/ludumdare33/src/math/vector2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ianma\Development\ludumdare33\bin\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/LudumDare33.dir/math/vector2.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ianma\Development\ludumdare33\bin\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/LudumDare33.dir/math/vector2.cpp.obj"
 	C:\MinGW\bin\g++.exe   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles\LudumDare33.dir\math\vector2.cpp.obj -c C:\Users\ianma\Development\ludumdare33\src\math\vector2.cpp
 
 CMakeFiles/LudumDare33.dir/math/vector2.cpp.i: cmake_force
@@ -187,6 +237,8 @@ LudumDare33_OBJECTS = \
 "CMakeFiles/LudumDare33.dir/gameprefix.cpp.obj" \
 "CMakeFiles/LudumDare33.dir/objects/image.cpp.obj" \
 "CMakeFiles/LudumDare33.dir/objects/monster.cpp.obj" \
+"CMakeFiles/LudumDare33.dir/objects/background.cpp.obj" \
+"CMakeFiles/LudumDare33.dir/objects/camera.cpp.obj" \
 "CMakeFiles/LudumDare33.dir/math/vector2.cpp.obj"
 
 # External object files for target LudumDare33
@@ -196,6 +248,8 @@ LudumDare33.exe: CMakeFiles/LudumDare33.dir/main.cpp.obj
 LudumDare33.exe: CMakeFiles/LudumDare33.dir/gameprefix.cpp.obj
 LudumDare33.exe: CMakeFiles/LudumDare33.dir/objects/image.cpp.obj
 LudumDare33.exe: CMakeFiles/LudumDare33.dir/objects/monster.cpp.obj
+LudumDare33.exe: CMakeFiles/LudumDare33.dir/objects/background.cpp.obj
+LudumDare33.exe: CMakeFiles/LudumDare33.dir/objects/camera.cpp.obj
 LudumDare33.exe: CMakeFiles/LudumDare33.dir/math/vector2.cpp.obj
 LudumDare33.exe: CMakeFiles/LudumDare33.dir/build.make
 LudumDare33.exe: C:/Users/ianma/Development/ludumdare33/src/allegro/lib/liballegro-5.0.10-static-mt.a
@@ -217,7 +271,7 @@ LudumDare33.exe: C:/Users/ianma/Development/ludumdare33/src/allegro/lib/libopena
 LudumDare33.exe: CMakeFiles/LudumDare33.dir/linklibs.rsp
 LudumDare33.exe: CMakeFiles/LudumDare33.dir/objects1.rsp
 LudumDare33.exe: CMakeFiles/LudumDare33.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\ianma\Development\ludumdare33\bin\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable LudumDare33.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\ianma\Development\ludumdare33\bin\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable LudumDare33.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\LudumDare33.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -229,6 +283,8 @@ CMakeFiles/LudumDare33.dir/requires: CMakeFiles/LudumDare33.dir/main.cpp.obj.req
 CMakeFiles/LudumDare33.dir/requires: CMakeFiles/LudumDare33.dir/gameprefix.cpp.obj.requires
 CMakeFiles/LudumDare33.dir/requires: CMakeFiles/LudumDare33.dir/objects/image.cpp.obj.requires
 CMakeFiles/LudumDare33.dir/requires: CMakeFiles/LudumDare33.dir/objects/monster.cpp.obj.requires
+CMakeFiles/LudumDare33.dir/requires: CMakeFiles/LudumDare33.dir/objects/background.cpp.obj.requires
+CMakeFiles/LudumDare33.dir/requires: CMakeFiles/LudumDare33.dir/objects/camera.cpp.obj.requires
 CMakeFiles/LudumDare33.dir/requires: CMakeFiles/LudumDare33.dir/math/vector2.cpp.obj.requires
 
 .PHONY : CMakeFiles/LudumDare33.dir/requires

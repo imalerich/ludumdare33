@@ -2,6 +2,8 @@
 #include "gameprefix.h"
 
 #include "objects/monster.h"
+#include "objects/background.h"
+#include "objects/camera.h"
 #include "math/vector2.h"
 
 int main(int argc, char **argv) {
@@ -19,6 +21,7 @@ int main(int argc, char **argv) {
 	al_flip_display();
 
 	MONSTER * player = new MONSTER("assets/player/legl.png", "assets/player/legr.png", "assets/player/arml.png", "assets/player/armr.png", "assets/player/body.png", "assets/player/head.png");
+	BACKGROUND * bg = new BACKGROUND("assets/map/background.png");
 
 	bool redraw = true;
 	while (!GAME_OVER) {
@@ -30,6 +33,7 @@ int main(int argc, char **argv) {
 			GAME_TIME += (1.0 / FRAME_RATE);
 
 			player->update();
+			camera.pos.x = player->pos.x;
 		}
 
 		if (ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
@@ -41,6 +45,7 @@ int main(int argc, char **argv) {
 			al_clear_to_color(al_map_rgb(139, 217, 252));
 
 			// draw shit goes here
+			bg->draw();
 			player->draw();
 
 			al_flip_display();
@@ -48,6 +53,8 @@ int main(int argc, char **argv) {
 	}
 
 	delete player;
+	delete bg;
+
 	release_allegro();
 	return 0;
 }

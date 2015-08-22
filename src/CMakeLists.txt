@@ -28,6 +28,8 @@ add_executable(LudumDare33
 	gameprefix.cpp
 	objects/image.cpp
 	objects/monster.cpp
+	objects/background.cpp
+	objects/camera.cpp
 	math/vector2.cpp
 )
 

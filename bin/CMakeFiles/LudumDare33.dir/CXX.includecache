@@ -383,6 +383,10 @@ gameprefix.h
 C:/Users/ianma/Development/ludumdare33/src/gameprefix.h
 objects/monster.h
 C:/Users/ianma/Development/ludumdare33/src/objects/monster.h
+objects/background.h
+C:/Users/ianma/Development/ludumdare33/src/objects/background.h
+objects/camera.h
+C:/Users/ianma/Development/ludumdare33/src/objects/camera.h
 math/vector2.h
 C:/Users/ianma/Development/ludumdare33/src/math/vector2.h
 
@@ -394,9 +398,31 @@ C:/Users/ianma/Development/ludumdare33/src/math/vector2.h
 ../gameprefix.h
 C:/Users/ianma/Development/ludumdare33/src/gameprefix.h
 
+C:/Users/ianma/Development/ludumdare33/src/objects/background.cpp
+background.h
+C:/Users/ianma/Development/ludumdare33/src/objects/background.h
+
+C:/Users/ianma/Development/ludumdare33/src/objects/background.h
+../gameprefix.h
+C:/Users/ianma/Development/ludumdare33/src/gameprefix.h
+image.h
+C:/Users/ianma/Development/ludumdare33/src/objects/image.h
+
+C:/Users/ianma/Development/ludumdare33/src/objects/camera.cpp
+camera.h
+C:/Users/ianma/Development/ludumdare33/src/objects/camera.h
+
+C:/Users/ianma/Development/ludumdare33/src/objects/camera.h
+../gameprefix.h
+C:/Users/ianma/Development/ludumdare33/src/gameprefix.h
+../math/vector2.h
+C:/Users/ianma/Development/ludumdare33/src/math/vector2.h
+
 C:/Users/ianma/Development/ludumdare33/src/objects/image.cpp
 image.h
 C:/Users/ianma/Development/ludumdare33/src/objects/image.h
+camera.h
+C:/Users/ianma/Development/ludumdare33/src/objects/camera.h
 
 C:/Users/ianma/Development/ludumdare33/src/objects/image.h
 ../gameprefix.h

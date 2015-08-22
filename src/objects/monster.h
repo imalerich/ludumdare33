@@ -25,6 +25,7 @@ public:
 	MONSTER(const char * leg_left, const char * leg_right, const char * arm_left, const char *arm_right, const char * body, const char * head);
 	~MONSTER();
 
+	VECTOR2 pos;
 	VECTOR2 size;
 	void draw();
 	void update();
@@ -41,7 +42,6 @@ private:
 	VECTOR2 leg_offset;
 	VECTOR2 body_offset;
 
-	VECTOR2 pos;
 	VECTOR2 vel;
 	VECTOR2 accel;
 };

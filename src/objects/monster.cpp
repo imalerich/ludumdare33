@@ -50,12 +50,14 @@ void MONSTER::update() {
 		leg_offset.y = sin(time) * radius;
 
 		body_offset.y = (1 + sin(time * 2)) * (radius/2.0);
+		pos.x += time;
 
 	} else if (step_state == RIGHT_STOMP) {
 		leg_offset.x = -cos(time) * radius;
 		leg_offset.y = -sin(time) * radius;
 
 		body_offset.y = (1 + sin(time * 2)) * (radius/2.0);
+		pos.x += time;
 
 	}
 

@@ -247,6 +247,60 @@ math/vector2.cpp.s:
 	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/math/vector2.cpp.s
 .PHONY : math/vector2.cpp.s
 
+objects/background.obj: objects/background.cpp.obj
+
+.PHONY : objects/background.obj
+
+# target to build an object file
+objects/background.cpp.obj:
+	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/objects/background.cpp.obj
+.PHONY : objects/background.cpp.obj
+
+objects/background.i: objects/background.cpp.i
+
+.PHONY : objects/background.i
+
+# target to preprocess a source file
+objects/background.cpp.i:
+	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/objects/background.cpp.i
+.PHONY : objects/background.cpp.i
+
+objects/background.s: objects/background.cpp.s
+
+.PHONY : objects/background.s
+
+# target to generate assembly for a file
+objects/background.cpp.s:
+	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/objects/background.cpp.s
+.PHONY : objects/background.cpp.s
+
+objects/camera.obj: objects/camera.cpp.obj
+
+.PHONY : objects/camera.obj
+
+# target to build an object file
+objects/camera.cpp.obj:
+	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/objects/camera.cpp.obj
+.PHONY : objects/camera.cpp.obj
+
+objects/camera.i: objects/camera.cpp.i
+
+.PHONY : objects/camera.i
+
+# target to preprocess a source file
+objects/camera.cpp.i:
+	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/objects/camera.cpp.i
+.PHONY : objects/camera.cpp.i
+
+objects/camera.s: objects/camera.cpp.s
+
+.PHONY : objects/camera.s
+
+# target to generate assembly for a file
+objects/camera.cpp.s:
+	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/objects/camera.cpp.s
+.PHONY : objects/camera.cpp.s
+
 objects/image.obj: objects/image.cpp.obj
 
 .PHONY : objects/image.obj
@@ -323,6 +377,12 @@ help:
 	@echo ... math/vector2.obj
 	@echo ... math/vector2.i
 	@echo ... math/vector2.s
+	@echo ... objects/background.obj
+	@echo ... objects/background.i
+	@echo ... objects/background.s
+	@echo ... objects/camera.obj
+	@echo ... objects/camera.i
+	@echo ... objects/camera.s
 	@echo ... objects/image.obj
 	@echo ... objects/image.i
 	@echo ... objects/image.s
