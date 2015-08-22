@@ -1,29 +1,78 @@
-#include "carspawner.h"
+#include <iostream>
+#include <cstdlib>
+#include <cmath>
+#include <math.h>
+#include <algorithm>
 #include <iostream>
 
-CARSPAWNER::CARSPAWNER(const char * filename) {
+#include "carspawner.h"
+#include "camera.h"
+
+CARSPAWNER::CARSPAWNER(const char * filename, double MINY, double MAXY) {
 	image = new IMAGE(filename);
 
-	for (int y=0; y<SCREENH; y += image->size.y) {
-		coords.push_back(VECTOR2(0, y));
-		std::cout << "Added a vector to the array\n";
-	}
+	min_y = MINY;
+	max_y = MAXY;
 
-	std::cout << "Created a vector of size: " + coords.size();
+	height = (max_y - min_y)/3;
+
+	int lane = rand() % 3;
+	cars.push_back(CAR( VECTOR2(SCREENW + camera.pos.x, lane) ));
+
+	next_spawn = rand() % 3 + 2;
 }
 
 CARSPAWNER::~CARSPAWNER() {
 	delete image;
 }
 
-void CARSPAWNER::draw() {
-	for (std::vector<VECTOR2>::iterator it = coords.begin(); it != coords.end(); it++) {
-		std::cout << "Drawing a car\n";
-		image->draw(*it);
+void CARSPAWNER::draw(int lane) {
+	for (std::vector<CAR>::iterator it = cars.begin(); it != cars.end(); it++) {
+		VECTOR2 pos = it->pos;
+
+		if (pos.y == lane) {
+			pos.y = max_y - (pos.y * height) - height;
+			pos.y += it->y_offset;
+			image->draw(pos);
+		}
 	}
 }
 
 void CARSPAWNER::update() {
-	for (std::vector<VECTOR2>::iterator it = coords.begin(); it != coords.end(); it++) {
+	time += (1.0 / FRAME_RATE);
+	if (time > next_spawn) {
+		time = 0.0;
+		next_spawn = (rand() % 300)/300.0 + 2;
+
+		int lane = rand() % 3;
+		cars.push_back(CAR( VECTOR2(SCREENW + camera.pos.x, lane) ));
+	}
+
+
+	for (std::vector<CAR>::iterator it = cars.begin(); it != cars.end(); it++) {
+		if (it->is_falling) {
+			it->update();
+		} else {
+			it->pos.x -= (1.0 / FRAME_RATE) * 200;
+		}
+	}
+}
+
+void CARSPAWNER::checkCarStomps(MONSTER * monster) {
+	if (!monster->canStompCar()) {
+		return;
+	}
+
+	for (std::vector<CAR>::iterator it = cars.begin(); it != cars.end(); it++) {
+		if (it->pos.x < monster->pos.x + monster->size.x && !it->is_falling) {
+			double speed = 1500;
+			double r = ((rand() % 1000)/1000.0) * (2 * M_PI);
+
+			double x = cos(r);
+			double y = sin(r);
+
+			it->fall_direction = VECTOR2(x * speed, y * speed);
+			it->is_falling = true;
+		}
 	}
 }

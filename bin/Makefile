@@ -301,6 +301,33 @@ objects/camera.cpp.s:
 	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/objects/camera.cpp.s
 .PHONY : objects/camera.cpp.s
 
+objects/car.obj: objects/car.cpp.obj
+
+.PHONY : objects/car.obj
+
+# target to build an object file
+objects/car.cpp.obj:
+	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/objects/car.cpp.obj
+.PHONY : objects/car.cpp.obj
+
+objects/car.i: objects/car.cpp.i
+
+.PHONY : objects/car.i
+
+# target to preprocess a source file
+objects/car.cpp.i:
+	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/objects/car.cpp.i
+.PHONY : objects/car.cpp.i
+
+objects/car.s: objects/car.cpp.s
+
+.PHONY : objects/car.s
+
+# target to generate assembly for a file
+objects/car.cpp.s:
+	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/objects/car.cpp.s
+.PHONY : objects/car.cpp.s
+
 objects/carspawner.obj: objects/carspawner.cpp.obj
 
 .PHONY : objects/carspawner.obj
@@ -410,6 +437,9 @@ help:
 	@echo ... objects/camera.obj
 	@echo ... objects/camera.i
 	@echo ... objects/camera.s
+	@echo ... objects/car.obj
+	@echo ... objects/car.i
+	@echo ... objects/car.s
 	@echo ... objects/carspawner.obj
 	@echo ... objects/carspawner.i
 	@echo ... objects/carspawner.s

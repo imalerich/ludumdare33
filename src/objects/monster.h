@@ -29,8 +29,15 @@ public:
 	VECTOR2 size;
 
 	double max_y_pos;
+	double lane_height;
+
+	int current_lane;
+	int num_lanes;
+
+	bool canStompCar();
 
 	void draw();
+	void draw_background();
 	void update();
 	void checkInput(ALLEGRO_EVENT ev);
 
@@ -40,14 +47,14 @@ private:
 
 	IMAGE * body_parts[BODY_PART_COUNT];
 
-	double jump_charge;
-	double speed;
-	int last_key_pressed;
 	unsigned step_state;
 
 	double time;
 	double stall;
 	double head_rot;
+
+	double lane_offset;
+	double target_lane_offset;
 	
 	VECTOR2 leg_offset;
 	VECTOR2 body_offset;

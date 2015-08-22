@@ -7,8 +7,6 @@
 
 #define MAX_JUMP_CHARGE 800.0
 #define GRAVITY_ACCEL 3000 
-#define JUMP_INCREMENT 200
-#define JUMP_DECREMENT 0
 
 MONSTER::MONSTER(const char * LEG_LEFT, const char * LEG_RIGHT, const char * ARM_LEFT, const char * ARM_RIGHT, const char * BODY, const char * HEAD) {
 	body_parts[MONSTER_LEFT_LEG] = new IMAGE(LEG_LEFT);
@@ -23,8 +21,7 @@ MONSTER::MONSTER(const char * LEG_LEFT, const char * LEG_RIGHT, const char * ARM
 	IMAGE * head = body_parts[MONSTER_HEAD];
 	size = head->size;
 
-	jump_charge = 0.0;
-	speed = 0.0;
+	lane_offset = 0.0;
 	time = 0.0;
 	step_state = LEFT_STOMP;
 	max_y_pos;
@@ -39,36 +36,27 @@ MONSTER::~MONSTER() {
 
 void MONSTER::checkInput(ALLEGRO_EVENT ev) {
 	switch (ev.keyboard.keycode) {
-	case ALLEGRO_KEY_LEFT:
-		if (last_key_pressed == ALLEGRO_KEY_RIGHT) {
-			speed = std::min(speed + 1.0, 9.0);
-		} else {
-			speed = std::max(speed - 1.0, 0.0);
-		}
-
-		last_key_pressed = ALLEGRO_KEY_LEFT;
-		break;
-
-	case ALLEGRO_KEY_RIGHT:
-		if (last_key_pressed == ALLEGRO_KEY_LEFT) {
-			speed = std::min(speed + 1.0, 9.0);
-		} else {
-			speed = std::max(speed - 1.0, 0.0);
-		}
-
-		last_key_pressed = ALLEGRO_KEY_RIGHT;
-		break;
-
-	// case ALLEGRO_KEY_DOWN:
-	// 	jump_charge += JUMP_INCREMENT;
-	// 	jump_charge = std::min(jump_charge, MAX_JUMP_CHARGE);
-	// 	break;
 
 	case ALLEGRO_KEY_UP:
+		if (current_lane < num_lanes-1) {
+			current_lane++;
+			target_lane_offset += lane_height;
+		}
+
+		break;
+
+	case ALLEGRO_KEY_DOWN:
+		if (current_lane > 0) {
+			current_lane--;
+			target_lane_offset -= lane_height;
+		}
+		break;
+
+	case ALLEGRO_KEY_SPACE:
 		if (isOnGround()) {
 			vel.y = -MAX_JUMP_CHARGE;
 		}
-		// jump_charge = 0.0;
+		
 		break;
 	}
 }
@@ -77,14 +65,13 @@ bool MONSTER::isOnGround() {
 	return std::abs(vel.y) < 0.001;
 }
 
+bool MONSTER::canStompCar() {
+	return !isOnGround() && (vel.y > 100);
+}
+
 void MONSTER::updatePos() {
 	double radius = 10;
-	if (isOnGround()) {
-		speed -= (1.0 / FRAME_RATE) * 6.0;
-		speed = std::max(speed, 0.0);
-	}
-
-	jump_charge = std::max((jump_charge - (1.0 / FRAME_RATE) * JUMP_DECREMENT), 0.0);
+	double speed = 5.0;
 
 	double time_accel = 0.7 + (time/M_PI);
 	time += (1.0 / FRAME_RATE) * (speed  * time_accel);
@@ -124,6 +111,21 @@ void MONSTER::updatePos() {
 		head_rot = (M_PI * 0.05) - time * 0.05;
 	}
 
+	// update the lane offset for the player
+	if (lane_offset < target_lane_offset && (step_state == LEFT_STOMP || step_state == RIGHT_STOMP)) {
+		lane_offset += (1.0 / FRAME_RATE) * 150;
+
+		if (lane_offset > target_lane_offset) {
+			lane_offset = target_lane_offset;
+		}
+	} else if (lane_offset > target_lane_offset && (step_state == LEFT_STOMP || step_state == RIGHT_STOMP)) {
+		lane_offset -= (1.0 / FRAME_RATE) * 150;
+
+		if (lane_offset < target_lane_offset) {
+			lane_offset = target_lane_offset;
+		}
+	}
+
 	// do shit with velocity and acceloration
 	accel.y = GRAVITY_ACCEL;
 	vel.y += accel.y * (1.0 / FRAME_RATE);
@@ -139,6 +141,32 @@ void MONSTER::update() {
 	updatePos();
 }
 
+void MONSTER::draw_background() {
+	for (int i=0; i<BODY_PART_COUNT; i++) {
+		IMAGE * img = body_parts[i];
+
+		double xOff = 0.0;
+		double yOff = 0.0;
+
+		switch(i) {
+		case MONSTER_RIGHT_LEG:
+			xOff = -leg_offset.x;
+			yOff = -leg_offset.y;
+			img->draw(VECTOR2(pos.x + xOff, pos.y + yOff - lane_offset));
+			break;
+
+		case MONSTER_RIGHT_ARM:
+			yOff = leg_offset.y;
+			img->draw(VECTOR2(pos.x + xOff, pos.y + yOff - lane_offset));
+			break;
+
+		default:
+			break;
+		}
+
+	}
+}
+
 void MONSTER::draw() {
 	for (int i=0; i<BODY_PART_COUNT; i++) {
 		IMAGE * img = body_parts[i];
@@ -150,37 +178,25 @@ void MONSTER::draw() {
 		case MONSTER_LEFT_LEG:
 			xOff = leg_offset.x;
 			yOff = leg_offset.y;
-			img->draw(VECTOR2(pos.x + xOff, pos.y + yOff + 16));
-			break;
-
-		case MONSTER_RIGHT_LEG:
-			xOff = -leg_offset.x;
-			yOff = -leg_offset.y;
-			img->draw(VECTOR2(pos.x + xOff, pos.y + yOff));
+			img->draw(VECTOR2(pos.x + xOff, pos.y + yOff + 16 - lane_offset));
 			break;
 
 		case MONSTER_LEFT_ARM:
 			yOff = -leg_offset.y;
-			img->draw(VECTOR2(pos.x + xOff, pos.y + yOff));
-			break;
-
-		case MONSTER_RIGHT_ARM:
-			yOff = leg_offset.y;
-			img->draw(VECTOR2(pos.x + xOff, pos.y + yOff));
+			img->draw(VECTOR2(pos.x + xOff, pos.y + yOff - lane_offset));
 			break;
 
 		case MONSTER_BODY:
 			yOff = body_offset.y;
-			img->draw(VECTOR2(pos.x + xOff, pos.y + yOff));
+			img->draw(VECTOR2(pos.x + xOff, pos.y + yOff - lane_offset));
 			break;
 
 		case MONSTER_HEAD:
 			yOff = body_offset.y;
-			img->draw(VECTOR2(pos.x + xOff, pos.y + yOff), VECTOR2(241, 210), head_rot);
+			img->draw(VECTOR2(pos.x + xOff, pos.y + yOff - lane_offset), VECTOR2(241, 210), head_rot);
 			break;
 
 		default:
-			img->draw(VECTOR2(pos.x + xOff, pos.y + yOff));
 			break;
 		}
 

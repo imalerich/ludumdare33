@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
 #include "gameprefix.h"
 
 #include "objects/monster.h"
@@ -18,6 +21,8 @@ int main(int argc, char **argv) {
 		return -1;
 	}
 
+	srand(time(NULL));
+
 	al_clear_to_color(al_map_rgb(139, 217, 252));
 	al_flip_display();
 
@@ -26,11 +31,16 @@ int main(int argc, char **argv) {
 	BACKGROUND * bg_1 = new BACKGROUND("assets/map/background_1.png");
 	BACKGROUND * street = new BACKGROUND("assets/map/street.png");
 
-	CARSPAWNER * spawner = new CARSPAWNER("assets/objects/car.png");
+	double min_y = SCREENH - street->image->size.y;
+	double max_y = SCREENH - 63;
+	double lane_height = (max_y - min_y)/3;
+	CARSPAWNER * spawner = new CARSPAWNER("assets/objects/car.png", min_y, max_y);
 
 	// set the players position to the center of the screen
-	player->pos.y = (SCREENH - player->size.y) / 2.0;
+	player->pos.y = SCREENH - player->size.y - 63;
 	player->max_y_pos = player->pos.y;
+	player->num_lanes = 3;
+	player->lane_height = lane_height;
 	
 	street->yPos = SCREENH - street->image->size.y;
 	bg_0->parallax = 1;
@@ -48,6 +58,8 @@ int main(int argc, char **argv) {
 			spawner->update();
 			player->update();
 			camera.pos.x = player->pos.x;
+
+			spawner->checkCarStomps(player);
 		}
 
 		if (ev.type == ALLEGRO_EVENT_KEY_UP) {
@@ -70,8 +82,17 @@ int main(int argc, char **argv) {
 			street->draw();
 			bg_1->draw();
 			bg_0->draw();
-			spawner->update();
-			player->draw();
+
+
+			for (int i=2; i>=0; i--) {
+				if (i == player->current_lane)
+					player->draw_background();
+
+				spawner->draw(i);
+
+				if (i == player->current_lane)
+					player->draw();
+			}
 
 			al_flip_display();
 		}

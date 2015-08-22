@@ -379,6 +379,10 @@ C:/Users/ianma/Development/ludumdare33/src/allegro5/allegro_image.h
 C:/Users/ianma/Development/ludumdare33/src/main.cpp
 stdio.h
 -
+stdlib.h
+-
+time.h
+-
 gameprefix.h
 C:/Users/ianma/Development/ludumdare33/src/gameprefix.h
 objects/monster.h
@@ -422,11 +426,33 @@ C:/Users/ianma/Development/ludumdare33/src/gameprefix.h
 ../math/vector2.h
 C:/Users/ianma/Development/ludumdare33/src/math/vector2.h
 
+C:/Users/ianma/Development/ludumdare33/src/objects/car.cpp
+car.h
+C:/Users/ianma/Development/ludumdare33/src/objects/car.h
+
+C:/Users/ianma/Development/ludumdare33/src/objects/car.h
+../gameprefix.h
+C:/Users/ianma/Development/ludumdare33/src/gameprefix.h
+../math/vector2.h
+C:/Users/ianma/Development/ludumdare33/src/math/vector2.h
+
 C:/Users/ianma/Development/ludumdare33/src/objects/carspawner.cpp
-carspawner.h
-C:/Users/ianma/Development/ludumdare33/src/objects/carspawner.h
 iostream
 -
+cstdlib
+-
+cmath
+-
+math.h
+-
+algorithm
+-
+iostream
+-
+carspawner.h
+C:/Users/ianma/Development/ludumdare33/src/objects/carspawner.h
+camera.h
+C:/Users/ianma/Development/ludumdare33/src/objects/camera.h
 
 C:/Users/ianma/Development/ludumdare33/src/objects/carspawner.h
 vector
@@ -435,6 +461,10 @@ vector
 C:/Users/ianma/Development/ludumdare33/src/gameprefix.h
 ../math/vector2.h
 C:/Users/ianma/Development/ludumdare33/src/math/vector2.h
+car.h
+C:/Users/ianma/Development/ludumdare33/src/objects/car.h
+monster.h
+C:/Users/ianma/Development/ludumdare33/src/objects/monster.h
 image.h
 C:/Users/ianma/Development/ludumdare33/src/objects/image.h
 
