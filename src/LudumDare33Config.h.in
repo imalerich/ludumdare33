@@ -1,0 +1,5 @@
+// the configured options and settings
+#define LudumDare33_VERSION_MAJOR @LudumDare33_VERSION_MAJOR@
+#define LudumDare33_VERSION_MINOR @LudumDare33_VERSION_MINOR@
+
+#define ALLEGRO_STATICLINK

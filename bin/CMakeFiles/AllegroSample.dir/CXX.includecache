@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/ianma/Development/ludumdare33/src/main.cpp
+stdio.h
+-
+LudumDare33Config.h
+C:/Users/ianma/Development/ludumdare33/src/LudumDare33Config.h
+
+LudumDare33Config.h
+
