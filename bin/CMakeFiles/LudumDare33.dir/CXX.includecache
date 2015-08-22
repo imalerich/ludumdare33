@@ -381,8 +381,8 @@ stdio.h
 -
 gameprefix.h
 C:/Users/ianma/Development/ludumdare33/src/gameprefix.h
-objects/image.h
-C:/Users/ianma/Development/ludumdare33/src/objects/image.h
+objects/monster.h
+C:/Users/ianma/Development/ludumdare33/src/objects/monster.h
 math/vector2.h
 C:/Users/ianma/Development/ludumdare33/src/math/vector2.h
 
@@ -403,6 +403,22 @@ C:/Users/ianma/Development/ludumdare33/src/objects/image.h
 C:/Users/ianma/Development/ludumdare33/src/gameprefix.h
 ../math/vector2.h
 C:/Users/ianma/Development/ludumdare33/src/math/vector2.h
+
+C:/Users/ianma/Development/ludumdare33/src/objects/monster.cpp
+monster.h
+C:/Users/ianma/Development/ludumdare33/src/objects/monster.h
+cmath
+-
+math.h
+-
+
+C:/Users/ianma/Development/ludumdare33/src/objects/monster.h
+../gameprefix.h
+C:/Users/ianma/Development/ludumdare33/src/gameprefix.h
+../math/vector2.h
+C:/Users/ianma/Development/ludumdare33/src/math/vector2.h
+image.h
+C:/Users/ianma/Development/ludumdare33/src/objects/image.h
 
 LudumDare33Config.h
 

@@ -3,7 +3,10 @@
 ALLEGRO_EVENT_QUEUE * event_queue = NULL;
 ALLEGRO_TIMER * timer = NULL;
 ALLEGRO_DISPLAY * display;
+ALLEGRO_DISPLAY_MODE disp_data;
 bool GAME_OVER = false;
+
+double GAME_TIME = 0.0;
 
 bool init_allegro() {
 	// call all allegro setup functions
@@ -37,6 +40,9 @@ bool setup_allegro_objects() {
 		return false;
 	}
 
+	// al_get_display_mode(al_get_num_display_modes() - 1, &disp_data);
+	// al_set_new_display_flags(ALLEGRO_FULLSCREEN);
+	// display = al_create_display(disp_data.width, disp_data.height);
 	display = al_create_display(SCREENW, SCREENH);
 	if (!display) {
 		release_allegro();

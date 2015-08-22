@@ -11,6 +11,7 @@ public:
 
 	void draw(VECTOR2 pos);
 	void draw(VECTOR2 pos, double rot);
+	void draw(VECTOR2 pos, VECTOR2 center, double rot);
 	VECTOR2 size;
 
 private:

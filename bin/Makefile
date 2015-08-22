@@ -274,6 +274,33 @@ objects/image.cpp.s:
 	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/objects/image.cpp.s
 .PHONY : objects/image.cpp.s
 
+objects/monster.obj: objects/monster.cpp.obj
+
+.PHONY : objects/monster.obj
+
+# target to build an object file
+objects/monster.cpp.obj:
+	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/objects/monster.cpp.obj
+.PHONY : objects/monster.cpp.obj
+
+objects/monster.i: objects/monster.cpp.i
+
+.PHONY : objects/monster.i
+
+# target to preprocess a source file
+objects/monster.cpp.i:
+	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/objects/monster.cpp.i
+.PHONY : objects/monster.cpp.i
+
+objects/monster.s: objects/monster.cpp.s
+
+.PHONY : objects/monster.s
+
+# target to generate assembly for a file
+objects/monster.cpp.s:
+	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/objects/monster.cpp.s
+.PHONY : objects/monster.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -299,6 +326,9 @@ help:
 	@echo ... objects/image.obj
 	@echo ... objects/image.i
 	@echo ... objects/image.s
+	@echo ... objects/monster.obj
+	@echo ... objects/monster.i
+	@echo ... objects/monster.s
 .PHONY : help
 
 

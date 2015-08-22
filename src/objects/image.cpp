@@ -23,6 +23,9 @@ void IMAGE::draw(VECTOR2 pos) {
 }
 
 void IMAGE::draw(VECTOR2 pos, double rot) {
-	fprintf(stdout, "Deleting the Image\n");
 	al_draw_rotated_bitmap(image, size.x/2.0, size.y/2.0, pos.x + size.x/2.0, pos.y + size.y/2.0, rot, 0);
+}
+
+void IMAGE::draw(VECTOR2 pos, VECTOR2 center, double rot) {
+	al_draw_rotated_bitmap(image, center.x, center.y, pos.x + center.x, pos.y + center.y, rot, 0);
 }

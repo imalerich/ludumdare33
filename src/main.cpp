@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "gameprefix.h"
 
-#include "objects/image.h"
+#include "objects/monster.h"
 #include "math/vector2.h"
 
 int main(int argc, char **argv) {
@@ -15,10 +15,10 @@ int main(int argc, char **argv) {
 		return -1;
 	}
 
-	al_clear_to_color(al_map_rgb(0, 0, 0));
+	al_clear_to_color(al_map_rgb(139, 217, 252));
 	al_flip_display();
 
-	IMAGE * goat = new IMAGE("assets/goat.jpg");
+	MONSTER * player = new MONSTER("assets/player/legl.png", "assets/player/legr.png", "assets/player/arml.png", "assets/player/armr.png", "assets/player/body.png", "assets/player/head.png");
 
 	bool redraw = true;
 	while (!GAME_OVER) {
@@ -27,6 +27,9 @@ int main(int argc, char **argv) {
 
 		if (ev.type == ALLEGRO_EVENT_TIMER) {
 			redraw = true;
+			GAME_TIME += (1.0 / FRAME_RATE);
+
+			player->update();
 		}
 
 		if (ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
@@ -35,16 +38,16 @@ int main(int argc, char **argv) {
 
 		if (redraw) {
 			redraw = false;
-			al_clear_to_color(al_map_rgb(0, 0, 0));
+			al_clear_to_color(al_map_rgb(139, 217, 252));
 
 			// draw shit goes here
-			goat->draw(VECTOR2(0, 0));
+			player->draw();
 
 			al_flip_display();
 		}
 	}
 
-	delete goat;
+	delete player;
 	release_allegro();
 	return 0;
 }

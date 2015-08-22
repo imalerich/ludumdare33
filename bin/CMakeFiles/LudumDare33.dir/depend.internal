@@ -108,6 +108,7 @@ CMakeFiles/LudumDare33.dir/main.cpp.obj
  C:/Users/ianma/Development/ludumdare33/src/main.cpp
  C:/Users/ianma/Development/ludumdare33/src/math/vector2.h
  C:/Users/ianma/Development/ludumdare33/src/objects/image.h
+ C:/Users/ianma/Development/ludumdare33/src/objects/monster.h
  LudumDare33Config.h
 CMakeFiles/LudumDare33.dir/math/vector2.cpp.obj
  C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/alcompat.h
@@ -217,4 +218,60 @@ CMakeFiles/LudumDare33.dir/objects/image.cpp.obj
  C:/Users/ianma/Development/ludumdare33/src/math/vector2.h
  C:/Users/ianma/Development/ludumdare33/src/objects/image.cpp
  C:/Users/ianma/Development/ludumdare33/src/objects/image.h
+ LudumDare33Config.h
+CMakeFiles/LudumDare33.dir/objects/monster.cpp.obj
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/alcompat.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/allegro.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/allegro_image.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/altime.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/base.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/bitmap.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/bitmap_draw.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/bitmap_io.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/bitmap_lock.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/blender.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/color.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/config.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/debug.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/display.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/drawing.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/error.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/events.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/file.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/fixed.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/fmaths.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/fshook.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/fullscreen_mode.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/inline/fmaths.inl
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/internal/alconfig.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/joystick.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/keyboard.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/keycodes.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/memory.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/monitor.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/mouse.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/mouse_cursor.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/path.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/platform/albcc32.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/platform/aliphonecfg.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/platform/almngw32.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/platform/almsvc.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/platform/alosxcfg.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/platform/alplatf.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/platform/alucfg.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/platform/alunix.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/platform/alwatcom.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/platform/astdbool.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/platform/astdint.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/system.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/threads.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/timer.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/tls.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/transformations.h
+ C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/utf8.h
+ C:/Users/ianma/Development/ludumdare33/src/gameprefix.h
+ C:/Users/ianma/Development/ludumdare33/src/math/vector2.h
+ C:/Users/ianma/Development/ludumdare33/src/objects/image.h
+ C:/Users/ianma/Development/ludumdare33/src/objects/monster.cpp
+ C:/Users/ianma/Development/ludumdare33/src/objects/monster.h
  LudumDare33Config.h

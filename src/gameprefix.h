@@ -14,7 +14,10 @@
 extern ALLEGRO_EVENT_QUEUE * event_queue;
 extern ALLEGRO_TIMER * timer;
 extern ALLEGRO_DISPLAY * display;
+extern ALLEGRO_DISPLAY_MODE disp_data;
 extern bool GAME_OVER;
+
+extern double GAME_TIME;
 
 bool init_allegro();
 bool setup_allegro_objects();
