@@ -1,13 +1,8 @@
 #include <stdio.h>
 #include "gameprefix.h"
 
-void redraw_screen() {
-	al_clear_to_color(al_map_rgb(0, 0, 0));
-
-	// draw shit goes here
-
-	al_flip_display();
-}
+#include "objects/image.h"
+#include "math/vector2.h"
 
 int main(int argc, char **argv) {
 	if (!init_allegro()) {
@@ -22,6 +17,8 @@ int main(int argc, char **argv) {
 
 	al_clear_to_color(al_map_rgb(0, 0, 0));
 	al_flip_display();
+
+	IMAGE * goat = new IMAGE("assets/goat.jpg");
 
 	bool redraw = true;
 	while (!GAME_OVER) {
@@ -38,10 +35,16 @@ int main(int argc, char **argv) {
 
 		if (redraw) {
 			redraw = false;
-			redraw_screen();
+			al_clear_to_color(al_map_rgb(0, 0, 0));
+
+			// draw shit goes here
+			goat->draw(VECTOR2(0, 0));
+
+			al_flip_display();
 		}
 	}
 
+	delete goat;
 	release_allegro();
 	return 0;
 }

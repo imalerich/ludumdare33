@@ -6,6 +6,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/ianma/Development/ludumdare33/src/gameprefix.cpp" "C:/Users/ianma/Development/ludumdare33/bin/CMakeFiles/LudumDare33.dir/gameprefix.cpp.obj"
   "C:/Users/ianma/Development/ludumdare33/src/main.cpp" "C:/Users/ianma/Development/ludumdare33/bin/CMakeFiles/LudumDare33.dir/main.cpp.obj"
+  "C:/Users/ianma/Development/ludumdare33/src/math/vector2.cpp" "C:/Users/ianma/Development/ludumdare33/bin/CMakeFiles/LudumDare33.dir/math/vector2.cpp.obj"
+  "C:/Users/ianma/Development/ludumdare33/src/objects/image.cpp" "C:/Users/ianma/Development/ludumdare33/bin/CMakeFiles/LudumDare33.dir/objects/image.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

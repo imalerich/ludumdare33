@@ -367,6 +367,8 @@ gameprefix.h
 C:/Users/ianma/Development/ludumdare33/src/gameprefix.h
 
 C:/Users/ianma/Development/ludumdare33/src/gameprefix.h
+stdio.h
+-
 LudumDare33Config.h
 C:/Users/ianma/Development/ludumdare33/src/LudumDare33Config.h
 allegro5/allegro.h
@@ -379,6 +381,28 @@ stdio.h
 -
 gameprefix.h
 C:/Users/ianma/Development/ludumdare33/src/gameprefix.h
+objects/image.h
+C:/Users/ianma/Development/ludumdare33/src/objects/image.h
+math/vector2.h
+C:/Users/ianma/Development/ludumdare33/src/math/vector2.h
+
+C:/Users/ianma/Development/ludumdare33/src/math/vector2.cpp
+vector2.h
+C:/Users/ianma/Development/ludumdare33/src/math/vector2.h
+
+C:/Users/ianma/Development/ludumdare33/src/math/vector2.h
+../gameprefix.h
+C:/Users/ianma/Development/ludumdare33/src/gameprefix.h
+
+C:/Users/ianma/Development/ludumdare33/src/objects/image.cpp
+image.h
+C:/Users/ianma/Development/ludumdare33/src/objects/image.h
+
+C:/Users/ianma/Development/ludumdare33/src/objects/image.h
+../gameprefix.h
+C:/Users/ianma/Development/ludumdare33/src/gameprefix.h
+../math/vector2.h
+C:/Users/ianma/Development/ludumdare33/src/math/vector2.h
 
 LudumDare33Config.h
 

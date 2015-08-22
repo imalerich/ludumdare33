@@ -220,6 +220,60 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+math/vector2.obj: math/vector2.cpp.obj
+
+.PHONY : math/vector2.obj
+
+# target to build an object file
+math/vector2.cpp.obj:
+	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/math/vector2.cpp.obj
+.PHONY : math/vector2.cpp.obj
+
+math/vector2.i: math/vector2.cpp.i
+
+.PHONY : math/vector2.i
+
+# target to preprocess a source file
+math/vector2.cpp.i:
+	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/math/vector2.cpp.i
+.PHONY : math/vector2.cpp.i
+
+math/vector2.s: math/vector2.cpp.s
+
+.PHONY : math/vector2.s
+
+# target to generate assembly for a file
+math/vector2.cpp.s:
+	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/math/vector2.cpp.s
+.PHONY : math/vector2.cpp.s
+
+objects/image.obj: objects/image.cpp.obj
+
+.PHONY : objects/image.obj
+
+# target to build an object file
+objects/image.cpp.obj:
+	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/objects/image.cpp.obj
+.PHONY : objects/image.cpp.obj
+
+objects/image.i: objects/image.cpp.i
+
+.PHONY : objects/image.i
+
+# target to preprocess a source file
+objects/image.cpp.i:
+	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/objects/image.cpp.i
+.PHONY : objects/image.cpp.i
+
+objects/image.s: objects/image.cpp.s
+
+.PHONY : objects/image.s
+
+# target to generate assembly for a file
+objects/image.cpp.s:
+	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/objects/image.cpp.s
+.PHONY : objects/image.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -239,6 +293,12 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... math/vector2.obj
+	@echo ... math/vector2.i
+	@echo ... math/vector2.s
+	@echo ... objects/image.obj
+	@echo ... objects/image.i
+	@echo ... objects/image.s
 .PHONY : help
 
 

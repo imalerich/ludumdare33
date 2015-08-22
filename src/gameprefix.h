@@ -1,6 +1,8 @@
 #ifndef GAMEPREFIX_H
 #define GAMEPREFIX_H
 
+// include all of the necessary allegro files
+#include <stdio.h>
 #include "LudumDare33Config.h"
 #include "allegro5/allegro.h"
 #include "allegro5/allegro_image.h"

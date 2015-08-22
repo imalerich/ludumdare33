@@ -26,6 +26,8 @@ include_directories("${PROJECT_BINARY_DIR}")
 add_executable(LudumDare33 
 	main.cpp 
 	gameprefix.cpp
+	objects/image.cpp
+	math/vector2.cpp
 )
 
 # Include Allegro libraries
