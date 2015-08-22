@@ -21,7 +21,13 @@ int main(int argc, char **argv) {
 	al_flip_display();
 
 	MONSTER * player = new MONSTER("assets/player/legl.png", "assets/player/legr.png", "assets/player/arml.png", "assets/player/armr.png", "assets/player/body.png", "assets/player/head.png");
-	BACKGROUND * bg = new BACKGROUND("assets/map/background.png");
+	BACKGROUND * bg_0 = new BACKGROUND("assets/map/background_0.png");
+	BACKGROUND * bg_1 = new BACKGROUND("assets/map/background_1.png");
+
+	// set the players position to the center of the screen
+	player->pos.y = (SCREENH - player->size.y) / 2.0;
+	bg_0->parallax = 1;
+	bg_1->parallax = 2;
 
 	bool redraw = true;
 	while (!GAME_OVER) {
@@ -45,7 +51,8 @@ int main(int argc, char **argv) {
 			al_clear_to_color(al_map_rgb(139, 217, 252));
 
 			// draw shit goes here
-			bg->draw();
+			bg_1->draw();
+			bg_0->draw();
 			player->draw();
 
 			al_flip_display();
@@ -53,7 +60,8 @@ int main(int argc, char **argv) {
 	}
 
 	delete player;
-	delete bg;
+	delete bg_0;
+	delete bg_1;
 
 	release_allegro();
 	return 0;

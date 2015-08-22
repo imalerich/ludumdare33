@@ -9,6 +9,7 @@ public:
 	BACKGROUND(const char * filename);
 	~BACKGROUND();
 
+	double parallax;
 	void update();
 	void draw();
 

@@ -8,8 +8,8 @@
 #include "allegro5/allegro_image.h"
 
 #define FRAME_RATE 144
-#define SCREENW 800
-#define SCREENH 600
+#define SCREENW 1280
+#define SCREENH 720
 
 extern ALLEGRO_EVENT_QUEUE * event_queue;
 extern ALLEGRO_TIMER * timer;

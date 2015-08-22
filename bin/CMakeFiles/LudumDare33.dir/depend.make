@@ -219,6 +219,7 @@ CMakeFiles/LudumDare33.dir/objects/background.cpp.obj: C:/Users/ianma/Developmen
 CMakeFiles/LudumDare33.dir/objects/background.cpp.obj: C:/Users/ianma/Development/ludumdare33/src/math/vector2.h
 CMakeFiles/LudumDare33.dir/objects/background.cpp.obj: C:/Users/ianma/Development/ludumdare33/src/objects/background.cpp
 CMakeFiles/LudumDare33.dir/objects/background.cpp.obj: C:/Users/ianma/Development/ludumdare33/src/objects/background.h
+CMakeFiles/LudumDare33.dir/objects/background.cpp.obj: C:/Users/ianma/Development/ludumdare33/src/objects/camera.h
 CMakeFiles/LudumDare33.dir/objects/background.cpp.obj: C:/Users/ianma/Development/ludumdare33/src/objects/image.h
 CMakeFiles/LudumDare33.dir/objects/background.cpp.obj: LudumDare33Config.h
 

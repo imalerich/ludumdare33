@@ -220,6 +220,7 @@ CMakeFiles/LudumDare33.dir/objects/background.cpp.obj
  C:/Users/ianma/Development/ludumdare33/src/math/vector2.h
  C:/Users/ianma/Development/ludumdare33/src/objects/background.cpp
  C:/Users/ianma/Development/ludumdare33/src/objects/background.h
+ C:/Users/ianma/Development/ludumdare33/src/objects/camera.h
  C:/Users/ianma/Development/ludumdare33/src/objects/image.h
  LudumDare33Config.h
 CMakeFiles/LudumDare33.dir/objects/camera.cpp.obj
