@@ -9,12 +9,12 @@ public:
 	BACKGROUND(const char * filename);
 	~BACKGROUND();
 
+	IMAGE * image;
 	double parallax;
+	double yPos;
+
 	void update();
 	void draw();
-
-private:
-	IMAGE * image;
 };
 
 #endif

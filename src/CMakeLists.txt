@@ -30,6 +30,7 @@ add_executable(LudumDare33
 	objects/monster.cpp
 	objects/background.cpp
 	objects/camera.cpp
+	objects/carspawner.cpp
 	math/vector2.cpp
 )
 

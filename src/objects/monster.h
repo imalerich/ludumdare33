@@ -27,12 +27,22 @@ public:
 
 	VECTOR2 pos;
 	VECTOR2 size;
+
+	double max_y_pos;
+
 	void draw();
 	void update();
+	void checkInput(ALLEGRO_EVENT ev);
 
 private:
+	bool isOnGround();
+	void updatePos();
+
 	IMAGE * body_parts[BODY_PART_COUNT];
 
+	double jump_charge;
+	double speed;
+	int last_key_pressed;
 	unsigned step_state;
 
 	double time;

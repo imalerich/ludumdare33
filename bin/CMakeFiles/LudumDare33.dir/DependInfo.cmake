@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/ianma/Development/ludumdare33/src/math/vector2.cpp" "C:/Users/ianma/Development/ludumdare33/bin/CMakeFiles/LudumDare33.dir/math/vector2.cpp.obj"
   "C:/Users/ianma/Development/ludumdare33/src/objects/background.cpp" "C:/Users/ianma/Development/ludumdare33/bin/CMakeFiles/LudumDare33.dir/objects/background.cpp.obj"
   "C:/Users/ianma/Development/ludumdare33/src/objects/camera.cpp" "C:/Users/ianma/Development/ludumdare33/bin/CMakeFiles/LudumDare33.dir/objects/camera.cpp.obj"
+  "C:/Users/ianma/Development/ludumdare33/src/objects/carspawner.cpp" "C:/Users/ianma/Development/ludumdare33/bin/CMakeFiles/LudumDare33.dir/objects/carspawner.cpp.obj"
   "C:/Users/ianma/Development/ludumdare33/src/objects/image.cpp" "C:/Users/ianma/Development/ludumdare33/bin/CMakeFiles/LudumDare33.dir/objects/image.cpp.obj"
   "C:/Users/ianma/Development/ludumdare33/src/objects/monster.cpp" "C:/Users/ianma/Development/ludumdare33/bin/CMakeFiles/LudumDare33.dir/objects/monster.cpp.obj"
   )

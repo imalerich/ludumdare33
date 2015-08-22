@@ -4,6 +4,7 @@
 #include "objects/monster.h"
 #include "objects/background.h"
 #include "objects/camera.h"
+#include "objects/carspawner.h"
 #include "math/vector2.h"
 
 int main(int argc, char **argv) {
@@ -23,9 +24,15 @@ int main(int argc, char **argv) {
 	MONSTER * player = new MONSTER("assets/player/legl.png", "assets/player/legr.png", "assets/player/arml.png", "assets/player/armr.png", "assets/player/body.png", "assets/player/head.png");
 	BACKGROUND * bg_0 = new BACKGROUND("assets/map/background_0.png");
 	BACKGROUND * bg_1 = new BACKGROUND("assets/map/background_1.png");
+	BACKGROUND * street = new BACKGROUND("assets/map/street.png");
+
+	CARSPAWNER * spawner = new CARSPAWNER("assets/objects/car.png");
 
 	// set the players position to the center of the screen
 	player->pos.y = (SCREENH - player->size.y) / 2.0;
+	player->max_y_pos = player->pos.y;
+	
+	street->yPos = SCREENH - street->image->size.y;
 	bg_0->parallax = 1;
 	bg_1->parallax = 2;
 
@@ -38,8 +45,17 @@ int main(int argc, char **argv) {
 			redraw = true;
 			GAME_TIME += (1.0 / FRAME_RATE);
 
+			spawner->update();
 			player->update();
 			camera.pos.x = player->pos.x;
+		}
+
+		if (ev.type == ALLEGRO_EVENT_KEY_UP) {
+			player->checkInput(ev);
+
+			if (ev.keyboard.keycode == ALLEGRO_KEY_ESCAPE) {
+				GAME_OVER = true;
+			}
 		}
 
 		if (ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
@@ -51,8 +67,10 @@ int main(int argc, char **argv) {
 			al_clear_to_color(al_map_rgb(139, 217, 252));
 
 			// draw shit goes here
+			street->draw();
 			bg_1->draw();
 			bg_0->draw();
+			spawner->update();
 			player->draw();
 
 			al_flip_display();
@@ -62,6 +80,8 @@ int main(int argc, char **argv) {
 	delete player;
 	delete bg_0;
 	delete bg_1;
+	delete street;
+	delete spawner;
 
 	release_allegro();
 	return 0;

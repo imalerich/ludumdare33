@@ -5,6 +5,7 @@ BACKGROUND::BACKGROUND(const char * filename) {
 	image = new IMAGE(filename);
 
 	parallax = 1;
+	yPos = 0.0;
 }
 
 BACKGROUND::~BACKGROUND() {
@@ -17,7 +18,7 @@ void BACKGROUND::draw() {
 	camera.pos.x = camX;
 
 	for (int x=0; x<(SCREENW/image->size.x) + 2; x++) {
-		image->draw(VECTOR2(x * image->size.x, 0));
+		image->draw(VECTOR2(x * image->size.x, yPos));
 	}
 
 	camera.pos.x = oldCamX;
