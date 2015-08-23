@@ -34,7 +34,6 @@ public:
 
 	double getDefaultSpeed();
 	double getCurrentLane();
-	int current_lane;
 	int num_lanes;
 
 	bool canStompCar();

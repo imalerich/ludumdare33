@@ -31,6 +31,7 @@ int main(int argc, char **argv) {
 	MONSTER * player = new MONSTER("assets/player/legl.png", "assets/player/legr.png", "assets/player/arml.png", "assets/player/armr.png", "assets/player/body.png", "assets/player/head.png");
 	BACKGROUND * bg_0 = new BACKGROUND("assets/map/background_0.png");
 	BACKGROUND * bg_1 = new BACKGROUND("assets/map/background_1.png");
+	BACKGROUND * bg_2 = new BACKGROUND("assets/map/background_2.png");
 	BACKGROUND * street = new BACKGROUND("assets/map/street.png");
 	HEALTHBAR * health = new HEALTHBAR();
 
@@ -38,6 +39,8 @@ int main(int argc, char **argv) {
 	double max_y = SCREENH - 63;
 	double lane_height = (max_y - min_y)/3;
 	CARSPAWNER * spawner = new CARSPAWNER("assets/objects/car.png", min_y, max_y);
+	CARSPAWNER * bullets = new CARSPAWNER("assets/objects/bullet.png", min_y, max_y);
+	IMAGE * hearts = new IMAGE("assets/background.png");
 
 	// set the players position to the center of the screen
 	player->pos.y = SCREENH - player->size.y - 63;
@@ -47,7 +50,8 @@ int main(int argc, char **argv) {
 	
 	street->yPos = SCREENH - street->image->size.y;
 	bg_0->parallax = 1;
-	bg_1->parallax = 2;
+	bg_1->parallax = 1.5;
+	bg_2->parallax = 2;
 
 	bool redraw = true;
 	while (!GAME_OVER) {
@@ -58,6 +62,7 @@ int main(int argc, char **argv) {
 			redraw = true;
 			GAME_TIME += (1.0 / FRAME_RATE);
 
+			bullets->update();
 			spawner->update();
 			player->update();
 
@@ -95,18 +100,20 @@ int main(int argc, char **argv) {
 			al_clear_to_color(al_map_rgb(139, 217, 252));
 
 			// draw shit goes here
+			hearts->draw(camera.pos);
 			street->draw();
+			bg_2->draw();
 			bg_1->draw();
 			bg_0->draw();
 
-
 			for (int i=2; i>=0; i--) {
-				if (i == player->current_lane)
+				if (i == (int)player->getCurrentLane())
 					player->draw_background();
 
 				spawner->draw(i);
+				bullets->draw(i);
 
-				if (i == player->current_lane)
+				if (i == (int)player->getCurrentLane())
 					player->draw();
 			}
 
@@ -119,9 +126,12 @@ int main(int argc, char **argv) {
 	delete player;
 	delete bg_0;
 	delete bg_1;
+	delete bg_2;
 	delete street;
 	delete spawner;
+	delete bullets;
 	delete health;
+	delete hearts;
 
 	release_allegro();
 	return 0;

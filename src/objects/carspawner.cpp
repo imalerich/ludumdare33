@@ -31,7 +31,7 @@ void CARSPAWNER::draw(int lane) {
 		VECTOR2 pos = it->pos;
 
 		if (pos.y == lane) {
-			pos.y = max_y - (pos.y * height) - height;
+			pos.y = max_y - (pos.y * height) - image->size.y;
 			pos.y += it->y_offset;
 			image->draw(pos, it->rotation, it->scale);
 		}
