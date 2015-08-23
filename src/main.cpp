@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <algorithm>
 
 #include "gameprefix.h"
 
@@ -59,17 +60,30 @@ int main(int argc, char **argv) {
 
 			spawner->update();
 			player->update();
-			camera.pos.x = player->pos.x;
+
+			camera.pos.x += player->getDefaultSpeed() * (1.0 / FRAME_RATE);
+
+			if (player->pos.x < camera.pos.x) {
+				camera.pos.x = player->pos.x;
+			}
+
+			if (player->pos.x + player->size.x > camera.pos.x + SCREENW) {
+				camera.pos.x = player->pos.x + player->size.x - SCREENW;
+			}
 
 			spawner->checkCarStomps(player);
 		}
 
 		if (ev.type == ALLEGRO_EVENT_KEY_UP) {
-			player->checkInput(ev);
+			player->checkInputUp(ev);
 
 			if (ev.keyboard.keycode == ALLEGRO_KEY_ESCAPE) {
 				GAME_OVER = true;
 			}
+		}
+
+		if (ev.type == ALLEGRO_EVENT_KEY_DOWN) {
+			player->checkInputDown(ev);
 		}
 
 		if (ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
@@ -96,7 +110,7 @@ int main(int argc, char **argv) {
 					player->draw();
 			}
 
-			health->draw();
+			// health->draw();
 
 			al_flip_display();
 		}

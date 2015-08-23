@@ -9,7 +9,6 @@ public:
 	CAMERA();
 
 	VECTOR2 pos;
-	VECTOR2 getPosRelativeToCam(VECTOR2 in);
 };
 
 extern CAMERA camera;

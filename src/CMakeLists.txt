@@ -10,7 +10,7 @@ set (LudumDare33_VERSION_MINOR 1)
 set (GCC_COVERAGE_LINK_FLAGS		"-static-libgcc -static-libstdc++")
 set (CMAKE_EXE_LINKER_FLAGS 		"${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAGS}")
 
-set (GCC_COVERAGE_COMPILE_FLAGS "-std-gnu++11")
+set (GCC_COVERAGE_COMPILE_FLAGS "-std-c++11")
 set (CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAGS}")
 
 # Configure a header file to pass CMake settings

@@ -5,9 +5,16 @@
 #include <iostream>
 #include <cstdlib>
 #include <algorithm>
+#include <cmath>
 
 #define MAX_JUMP_CHARGE 1300.0
 #define GRAVITY_ACCEL 3000 
+#define LANE_CHANGE_SPEED 150
+
+#define DEFAULT_PLAYER_SPEED 15.0
+#define MAX_SPEED 20.0
+#define MIN_SPEED 10.0
+#define PLAYER_ACCELERATION 8.0
 
 MONSTER::MONSTER(const char * LEG_LEFT, const char * LEG_RIGHT, const char * ARM_LEFT, const char * ARM_RIGHT, const char * BODY, const char * HEAD) {
 	body_parts[MONSTER_LEFT_LEG] = new IMAGE(LEG_LEFT);
@@ -22,8 +29,13 @@ MONSTER::MONSTER(const char * LEG_LEFT, const char * LEG_RIGHT, const char * ARM
 	IMAGE * head = body_parts[MONSTER_HEAD];
 	size = head->size;
 
-	lane_offset = 0.0;
+	jump_move_speed = 0.0;
+	default_speed = 0.0;
+	default_time = 0.0;
+	found_default_speed = false;
 	time = 0.0;
+	lane_offset = 0.0;
+	speed = DEFAULT_PLAYER_SPEED;
 	step_state = LEFT_STOMP;
 	max_y_pos;
 }
@@ -35,26 +47,50 @@ MONSTER::~MONSTER() {
 	}
 }
 
-void MONSTER::checkInput(ALLEGRO_EVENT ev) {
+void MONSTER::checkInputDown(ALLEGRO_EVENT ev) {
 	switch (ev.keyboard.keycode) {
 
 	case ALLEGRO_KEY_UP:
-		if (current_lane < num_lanes-1) {
-			current_lane++;
-			target_lane_offset += lane_height;
-		}
+		directions[KEY_UP] = true;
+		break;
+
+	case ALLEGRO_KEY_DOWN:
+		directions[KEY_DOWN] = true;
+		break;
+
+	case ALLEGRO_KEY_LEFT:
+		directions[KEY_LEFT] = true;
+	break;
+
+	case ALLEGRO_KEY_RIGHT:
+		directions[KEY_RIGHT] = true;
+		break;
+	}
+}
+
+void MONSTER::checkInputUp(ALLEGRO_EVENT ev) {
+	switch (ev.keyboard.keycode) {
+
+	case ALLEGRO_KEY_UP:
+		directions[KEY_UP] = false;
 
 		break;
 
 	case ALLEGRO_KEY_DOWN:
-		if (current_lane > 0) {
-			current_lane--;
-			target_lane_offset -= lane_height;
-		}
+		directions[KEY_DOWN] = false;
+		break;
+
+	case ALLEGRO_KEY_RIGHT:
+		directions[KEY_RIGHT] = false;
+		break;
+
+	case ALLEGRO_KEY_LEFT:
+		directions[KEY_LEFT] = false;
 		break;
 
 	case ALLEGRO_KEY_SPACE:
 		if (isOnGround()) {
+			jump_move_speed = speed;
 			vel.y = -MAX_JUMP_CHARGE;
 		}
 		
@@ -74,9 +110,64 @@ bool MONSTER::canStompCar() {
 	return !isOnGround() && (vel.y > 0) && (pos.y > -5);
 }
 
+double MONSTER::getDefaultSpeed() {
+	if (!found_default_speed) {
+		return 0.0;
+	} else {
+		return default_speed / default_time;
+	}
+}
+
 void MONSTER::updatePos() {
 	double radius = 10;
-	double speed = 13.0;
+
+	if (directions[KEY_LEFT]) {
+		speed -= PLAYER_ACCELERATION * (1.0 / FRAME_RATE);
+		speed = std::max(speed, MIN_SPEED);
+
+	} else if (directions[KEY_RIGHT]) {
+		speed += PLAYER_ACCELERATION * (1.0 / FRAME_RATE);
+		speed = std::min(speed, MAX_SPEED);
+
+	} else {
+		// if neither keys are pressed, reset the player to the default speed
+		if (speed < DEFAULT_PLAYER_SPEED) {
+			speed += PLAYER_ACCELERATION * (1.0 / FRAME_RATE);
+			speed = std::min(speed, DEFAULT_PLAYER_SPEED);
+		} else if (speed > DEFAULT_PLAYER_SPEED) {
+			speed -= PLAYER_ACCELERATION * (1.0 / FRAME_RATE);
+			speed = std::max(speed, DEFAULT_PLAYER_SPEED);
+		}
+	}
+
+	if (directions[KEY_UP]) {
+		lane_offset += (1.0 / FRAME_RATE) * LANE_CHANGE_SPEED;
+		lane_offset = std::min(lane_offset, (num_lanes-1) * lane_height);
+
+	} else if (directions[KEY_DOWN]) {
+		lane_offset -= (1.0 / FRAME_RATE) * LANE_CHANGE_SPEED;
+		lane_offset = std::max(lane_offset, 0.0);
+
+	} else {
+		// we need to snap the player to the nearest lane
+		int lane = round(getCurrentLane());
+		double lane_target = lane * lane_height;
+
+		// update the lane offset for the player
+		if (lane_offset < lane_target && (step_state == LEFT_STOMP || step_state == RIGHT_STOMP)) {
+			lane_offset += (1.0 / FRAME_RATE) * 150;
+
+			if (lane_offset > lane_target) {
+				lane_offset = lane_target;
+			}
+		} else if (lane_offset > lane_target && (step_state == LEFT_STOMP || step_state == RIGHT_STOMP)) {
+			lane_offset -= (1.0 / FRAME_RATE) * 150;
+
+			if (lane_offset < lane_target) {
+				lane_offset = lane_target;
+			}
+		}
+	}
 
 	double time_accel = 0.7 + (time/M_PI);
 	time += (1.0 / FRAME_RATE) * (speed  * time_accel);
@@ -89,8 +180,16 @@ void MONSTER::updatePos() {
 
 	// pause for M_PI / 2.0
 	if (time > M_PI * 0.75 && step_state%2 == 1) {
+		if (!found_default_speed && step_state + 1 == STOMP_COUNT) {
+			found_default_speed = true;
+		}
+
 		time = 0.0;
 		step_state = (step_state + 1) % STOMP_COUNT;
+	}
+
+	if (!found_default_speed) {
+		default_time += (1.0 / FRAME_RATE);
 	}
 
 	if (step_state == LEFT_STOMP) {
@@ -98,15 +197,33 @@ void MONSTER::updatePos() {
 		leg_offset.y = sin(time) * radius;
 
 		body_offset.y = (1 + sin(time * 2)) * (radius/2.0);
-		pos.x += (time * speed)/9.0;
+
+		if (isOnGround()) {
+			pos.x += (time * speed)/9.0;
+		}
+
+		if (!found_default_speed) {
+			default_speed += (time * speed)/9.0;
+		}
 
 	} else if (step_state == RIGHT_STOMP) {
 		leg_offset.x = -cos(time) * radius;
 		leg_offset.y = -sin(time) * radius;
 
 		body_offset.y = (1 + sin(time * 2)) * (radius/2.0);
-		pos.x += (time * speed)/9.0;
 
+		if (isOnGround()) {
+			pos.x += (time * speed)/9.0;
+		}
+
+		if (!found_default_speed) {
+			default_speed += (time * speed)/9.0;
+		}
+
+	}
+
+	if (!isOnGround()) {
+		pos.x += (default_speed / default_time) * (1.0 / FRAME_RATE);
 	}
 
 	if (step_state == LEFT_STOMP) {
@@ -114,21 +231,6 @@ void MONSTER::updatePos() {
 
 	} else if (step_state == RIGHT_STOMP) {
 		head_rot = (M_PI * 0.05) - time * 0.05;
-	}
-
-	// update the lane offset for the player
-	if (lane_offset < target_lane_offset && (step_state == LEFT_STOMP || step_state == RIGHT_STOMP)) {
-		lane_offset += (1.0 / FRAME_RATE) * 150;
-
-		if (lane_offset > target_lane_offset) {
-			lane_offset = target_lane_offset;
-		}
-	} else if (lane_offset > target_lane_offset && (step_state == LEFT_STOMP || step_state == RIGHT_STOMP)) {
-		lane_offset -= (1.0 / FRAME_RATE) * 150;
-
-		if (lane_offset < target_lane_offset) {
-			lane_offset = target_lane_offset;
-		}
 	}
 
 	// do shit with velocity and acceloration

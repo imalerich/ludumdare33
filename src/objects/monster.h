@@ -5,20 +5,21 @@
 #include "../math/vector2.h"
 #include "image.h"
 
-#define MONSTER_RIGHT_LEG 0
-#define MONSTER_RIGHT_ARM 1
-#define MONSTER_BODY 2
-#define MONSTER_LEFT_LEG 3
-#define MONSTER_LEFT_ARM 4
-#define MONSTER_HEAD 5
-
-#define LEFT_STOMP 0
-#define LEFT_STOMP_HOLD 1
-#define RIGHT_STOMP 2
-#define RIGHT_STOMP_HOLD 3
+#define BODY_PART_COUNT 6
 #define STOMP_COUNT 4
 
-#define BODY_PART_COUNT 6
+enum BODY_PARTS {
+	MONSTER_RIGHT_LEG, MONSTER_RIGHT_ARM, MONSTER_BODY, 
+	MONSTER_LEFT_LEG, MONSTER_LEFT_ARM, MONSTER_HEAD
+};
+
+enum ANIMATION_STAGE {
+	LEFT_STOMP, LEFT_STOMP_HOLD, RIGHT_STOMP, RIGHT_STOMP_HOLD
+};
+
+enum DIRECTION_KEYS {
+	KEY_UP, KEY_DOWN, KEY_LEFT, KEY_RIGHT
+};
 
 class MONSTER {
 public:
@@ -31,6 +32,7 @@ public:
 	double max_y_pos;
 	double lane_height;
 
+	double getDefaultSpeed();
 	double getCurrentLane();
 	int current_lane;
 	int num_lanes;
@@ -40,22 +42,31 @@ public:
 	void draw();
 	void draw_background();
 	void update();
-	void checkInput(ALLEGRO_EVENT ev);
+
+	void checkInputDown(ALLEGRO_EVENT ev);
+	void checkInputUp(ALLEGRO_EVENT ev);
 
 private:
+	bool directions[4] = { false, false, false, false };
+
 	bool isOnGround();
 	void updatePos();
+
+	double jump_move_speed;
+	double default_speed;
+	double default_time;
+	bool found_default_speed;
 
 	IMAGE * body_parts[BODY_PART_COUNT];
 
 	unsigned step_state;
 
+	double speed;
 	double time;
 	double stall;
 	double head_rot;
 
 	double lane_offset;
-	double target_lane_offset;
 	
 	VECTOR2 leg_offset;
 	VECTOR2 body_offset;
