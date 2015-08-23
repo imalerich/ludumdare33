@@ -17,6 +17,7 @@ extern ALLEGRO_DISPLAY * display;
 extern ALLEGRO_DISPLAY_MODE disp_data;
 extern bool GAME_OVER;
 
+extern int score;
 extern double GAME_TIME;
 
 bool init_allegro();

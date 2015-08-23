@@ -6,6 +6,7 @@ ALLEGRO_DISPLAY * display;
 ALLEGRO_DISPLAY_MODE disp_data;
 bool GAME_OVER = false;
 
+int score = 0;
 double GAME_TIME = 0.0;
 
 bool init_allegro() {
@@ -58,6 +59,7 @@ bool setup_allegro_objects() {
 	al_register_event_source(event_queue, al_get_display_event_source(display));
 	al_register_event_source(event_queue, al_get_timer_event_source(timer));
 	al_register_event_source(event_queue, al_get_keyboard_event_source());
+	al_register_event_source(event_queue, al_get_mouse_event_source());
 	al_start_timer(timer);
 
 	return true;

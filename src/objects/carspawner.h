@@ -13,11 +13,17 @@ public:
 	CARSPAWNER(const char * filename, double MINY, double MAXY);
 	~CARSPAWNER();
 
+	void reset();
+
+	double default_speed;
+
 	void draw(int lane);
 	void update();
 
 	void checkCarStomps(MONSTER * monster);
 	void checkBulletHits(MONSTER * monster);
+
+	MONSTER * follow;
 
 private:
 	double time;

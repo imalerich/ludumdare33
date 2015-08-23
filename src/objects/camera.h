@@ -7,6 +7,7 @@
 class CAMERA {
 public:
 	CAMERA();
+	void reset();
 
 	double cam_shake;
 	VECTOR2 pos;

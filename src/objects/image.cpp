@@ -46,3 +46,11 @@ void IMAGE::draw(VECTOR2 pos, VECTOR2 center, double rot, double scale) {
 void IMAGE::draw(VECTOR2 pos, VECTOR2 center, double rot, double scaleX, double scaleY) {
 	al_draw_scaled_rotated_bitmap(image, center.x, center.y, pos.x + center.x - camera.renderPos().x , pos.y + center.y - camera.renderPos().y, scaleX, scaleY, rot, 0);
 }
+
+void IMAGE::drawRegion(VECTOR2 pos, VECTOR2 source, VECTOR2 size) {
+	al_draw_bitmap_region(image, source.x, source.y, size.x, size.y, pos.x, pos.y, 0);
+}
+
+void IMAGE::drawScaled(VECTOR2 source, VECTOR2 source_size, VECTOR2 destination, VECTOR2 destination_width) {
+	al_draw_scaled_bitmap(image, source.x, source.y, source_size.x, source_size.y, destination.x, destination.y, destination.x, destination.y, 0);
+}

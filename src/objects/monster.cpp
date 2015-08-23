@@ -11,7 +11,7 @@
 
 #define MAX_JUMP_CHARGE 1300.0
 #define GRAVITY_ACCEL 3000 
-#define LANE_CHANGE_SPEED 150
+#define LANE_CHANGE_SPEED 200
 
 #define DEFAULT_PLAYER_SPEED 15.0
 #define MAX_SPEED 20.0
@@ -28,21 +28,22 @@ MONSTER::MONSTER(const char * LEG_LEFT, const char * LEG_RIGHT, const char * ARM
 	body_parts[MONSTER_BODY] = new IMAGE(BODY);
 	body_parts[MONSTER_HEAD] = new IMAGE(HEAD);
 
+	shadow = new IMAGE("assets/player/shadow.png");
+
 	IMAGE * head = body_parts[MONSTER_HEAD];
 	size = head->size;
 
 	health = 1.0;
 
+	time = 0.0;
 	was_jumping = false;
 	jump_move_speed = 0.0;
 	default_speed = 0.0;
 	default_time = 0.0;
 	found_default_speed = false;
-	time = 0.0;
 	lane_offset = 0.0;
 	speed = DEFAULT_PLAYER_SPEED;
 	step_state = LEFT_STOMP;
-	max_y_pos;
 }
 
 MONSTER::~MONSTER() {
@@ -50,6 +51,25 @@ MONSTER::~MONSTER() {
 		if (body_parts[i])
 			delete body_parts[i];
 	}
+
+	delete shadow;
+}
+
+void MONSTER::reset() {
+	health = 1.0;
+
+	pos = VECTOR2(0, max_y_pos);
+	vel = VECTOR2();
+
+	time = 0.0;
+	was_jumping = false;
+	jump_move_speed = 0.0;
+	default_speed = 0.0;
+	default_time = 0.0;
+	found_default_speed = false;
+	lane_offset = 0.0;
+	speed = DEFAULT_PLAYER_SPEED;
+	step_state = LEFT_STOMP;
 }
 
 void MONSTER::checkInputDown(ALLEGRO_EVENT ev) {
@@ -118,7 +138,7 @@ double MONSTER::getRenderedY() {
 }
 
 double MONSTER::getCurrentLane() {
-	return std::abs(lane_offset / lane_height);
+	return round(std::abs(lane_offset / lane_height));
 }
 
 bool MONSTER::isOnGround() {
@@ -169,7 +189,7 @@ void MONSTER::updatePos() {
 
 	} else {
 		// we need to snap the player to the nearest lane
-		int lane = round(getCurrentLane());
+		int lane = getCurrentLane();
 		double lane_target = lane * lane_height;
 
 		// update the lane offset for the player
@@ -205,6 +225,10 @@ void MONSTER::updatePos() {
 
 		time = 0.0;
 		step_state = (step_state + 1) % STOMP_COUNT;
+
+		if (step_state == RIGHT_STOMP || step_state == LEFT_STOMP) {
+			camera.cam_shake += 1.0;
+		}
 	}
 
 	if (!found_default_speed) {
@@ -257,6 +281,16 @@ void MONSTER::updatePos() {
 	vel.y += accel.y * (1.0 / FRAME_RATE);
 	pos.y += vel.y * (1.0 / FRAME_RATE);
 
+	pos.x += vel.x * (1.0 / FRAME_RATE);
+	if (vel.x > 0) {
+		vel.x -= 3000.0  * (1.0 / FRAME_RATE);
+		vel.x = std::max(0.0, vel.x);
+
+	} else if (vel.x < 0) {
+		vel.x += 3000.0  * (1.0 / FRAME_RATE);
+		vel.x = std::min(0.0, vel.x);
+	}
+
 	if (pos.y >= max_y_pos) {
 		if (was_jumping) {
 			was_jumping = false;
@@ -270,6 +304,10 @@ void MONSTER::updatePos() {
 
 void MONSTER::update() {
 	updatePos();
+}
+
+void MONSTER::drawShadow() {
+	shadow->draw(VECTOR2(pos.x, max_y_pos - lane_offset));
 }
 
 void MONSTER::draw_background() {

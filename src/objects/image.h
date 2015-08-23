@@ -16,6 +16,10 @@ public:
 	void draw(VECTOR2 pos, double rot, double scaleX, double scaleY);
 	void draw(VECTOR2 pos, VECTOR2 center, double rot, double scale);
 	void draw(VECTOR2 pos, VECTOR2 center, double rot, double scaleX, double scaleY);
+
+	void drawRegion(VECTOR2 pos, VECTOR2 source, VECTOR2 size);
+	void drawScaled(VECTOR2 source, VECTOR2 source_size, VECTOR2 destination, VECTOR2 destination_width);
+
 	VECTOR2 size;
 
 private:

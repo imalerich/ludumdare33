@@ -306,6 +306,56 @@ CMakeFiles/LudumDare33.dir/ui/healthbar.cpp.obj.provides: CMakeFiles/LudumDare33
 CMakeFiles/LudumDare33.dir/ui/healthbar.cpp.obj.provides.build: CMakeFiles/LudumDare33.dir/ui/healthbar.cpp.obj
 
 
+CMakeFiles/LudumDare33.dir/ui/score.cpp.obj: CMakeFiles/LudumDare33.dir/flags.make
+CMakeFiles/LudumDare33.dir/ui/score.cpp.obj: CMakeFiles/LudumDare33.dir/includes_CXX.rsp
+CMakeFiles/LudumDare33.dir/ui/score.cpp.obj: C:/Users/ianma/Development/ludumdare33/src/ui/score.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ianma\Development\ludumdare33\bin\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/LudumDare33.dir/ui/score.cpp.obj"
+	C:\MinGW\bin\g++.exe   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles\LudumDare33.dir\ui\score.cpp.obj -c C:\Users\ianma\Development\ludumdare33\src\ui\score.cpp
+
+CMakeFiles/LudumDare33.dir/ui/score.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LudumDare33.dir/ui/score.cpp.i"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_FLAGS) -E C:\Users\ianma\Development\ludumdare33\src\ui\score.cpp > CMakeFiles\LudumDare33.dir\ui\score.cpp.i
+
+CMakeFiles/LudumDare33.dir/ui/score.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LudumDare33.dir/ui/score.cpp.s"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_FLAGS) -S C:\Users\ianma\Development\ludumdare33\src\ui\score.cpp -o CMakeFiles\LudumDare33.dir\ui\score.cpp.s
+
+CMakeFiles/LudumDare33.dir/ui/score.cpp.obj.requires:
+
+.PHONY : CMakeFiles/LudumDare33.dir/ui/score.cpp.obj.requires
+
+CMakeFiles/LudumDare33.dir/ui/score.cpp.obj.provides: CMakeFiles/LudumDare33.dir/ui/score.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/ui/score.cpp.obj.provides.build
+.PHONY : CMakeFiles/LudumDare33.dir/ui/score.cpp.obj.provides
+
+CMakeFiles/LudumDare33.dir/ui/score.cpp.obj.provides.build: CMakeFiles/LudumDare33.dir/ui/score.cpp.obj
+
+
+CMakeFiles/LudumDare33.dir/ui/gameover.cpp.obj: CMakeFiles/LudumDare33.dir/flags.make
+CMakeFiles/LudumDare33.dir/ui/gameover.cpp.obj: CMakeFiles/LudumDare33.dir/includes_CXX.rsp
+CMakeFiles/LudumDare33.dir/ui/gameover.cpp.obj: C:/Users/ianma/Development/ludumdare33/src/ui/gameover.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ianma\Development\ludumdare33\bin\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/LudumDare33.dir/ui/gameover.cpp.obj"
+	C:\MinGW\bin\g++.exe   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles\LudumDare33.dir\ui\gameover.cpp.obj -c C:\Users\ianma\Development\ludumdare33\src\ui\gameover.cpp
+
+CMakeFiles/LudumDare33.dir/ui/gameover.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LudumDare33.dir/ui/gameover.cpp.i"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_FLAGS) -E C:\Users\ianma\Development\ludumdare33\src\ui\gameover.cpp > CMakeFiles\LudumDare33.dir\ui\gameover.cpp.i
+
+CMakeFiles/LudumDare33.dir/ui/gameover.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LudumDare33.dir/ui/gameover.cpp.s"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_FLAGS) -S C:\Users\ianma\Development\ludumdare33\src\ui\gameover.cpp -o CMakeFiles\LudumDare33.dir\ui\gameover.cpp.s
+
+CMakeFiles/LudumDare33.dir/ui/gameover.cpp.obj.requires:
+
+.PHONY : CMakeFiles/LudumDare33.dir/ui/gameover.cpp.obj.requires
+
+CMakeFiles/LudumDare33.dir/ui/gameover.cpp.obj.provides: CMakeFiles/LudumDare33.dir/ui/gameover.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/ui/gameover.cpp.obj.provides.build
+.PHONY : CMakeFiles/LudumDare33.dir/ui/gameover.cpp.obj.provides
+
+CMakeFiles/LudumDare33.dir/ui/gameover.cpp.obj.provides.build: CMakeFiles/LudumDare33.dir/ui/gameover.cpp.obj
+
+
 # Object files for target LudumDare33
 LudumDare33_OBJECTS = \
 "CMakeFiles/LudumDare33.dir/main.cpp.obj" \
@@ -317,7 +367,9 @@ LudumDare33_OBJECTS = \
 "CMakeFiles/LudumDare33.dir/objects/carspawner.cpp.obj" \
 "CMakeFiles/LudumDare33.dir/objects/car.cpp.obj" \
 "CMakeFiles/LudumDare33.dir/math/vector2.cpp.obj" \
-"CMakeFiles/LudumDare33.dir/ui/healthbar.cpp.obj"
+"CMakeFiles/LudumDare33.dir/ui/healthbar.cpp.obj" \
+"CMakeFiles/LudumDare33.dir/ui/score.cpp.obj" \
+"CMakeFiles/LudumDare33.dir/ui/gameover.cpp.obj"
 
 # External object files for target LudumDare33
 LudumDare33_EXTERNAL_OBJECTS =
@@ -332,6 +384,8 @@ LudumDare33.exe: CMakeFiles/LudumDare33.dir/objects/carspawner.cpp.obj
 LudumDare33.exe: CMakeFiles/LudumDare33.dir/objects/car.cpp.obj
 LudumDare33.exe: CMakeFiles/LudumDare33.dir/math/vector2.cpp.obj
 LudumDare33.exe: CMakeFiles/LudumDare33.dir/ui/healthbar.cpp.obj
+LudumDare33.exe: CMakeFiles/LudumDare33.dir/ui/score.cpp.obj
+LudumDare33.exe: CMakeFiles/LudumDare33.dir/ui/gameover.cpp.obj
 LudumDare33.exe: CMakeFiles/LudumDare33.dir/build.make
 LudumDare33.exe: C:/Users/ianma/Development/ludumdare33/src/allegro/lib/liballegro-5.0.10-static-mt.a
 LudumDare33.exe: C:/Users/ianma/Development/ludumdare33/src/allegro/lib/liballegro_acodec-5.0.10-static-mt.a
@@ -352,7 +406,7 @@ LudumDare33.exe: C:/Users/ianma/Development/ludumdare33/src/allegro/lib/libopena
 LudumDare33.exe: CMakeFiles/LudumDare33.dir/linklibs.rsp
 LudumDare33.exe: CMakeFiles/LudumDare33.dir/objects1.rsp
 LudumDare33.exe: CMakeFiles/LudumDare33.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\ianma\Development\ludumdare33\bin\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable LudumDare33.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\ianma\Development\ludumdare33\bin\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable LudumDare33.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\LudumDare33.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -370,6 +424,8 @@ CMakeFiles/LudumDare33.dir/requires: CMakeFiles/LudumDare33.dir/objects/carspawn
 CMakeFiles/LudumDare33.dir/requires: CMakeFiles/LudumDare33.dir/objects/car.cpp.obj.requires
 CMakeFiles/LudumDare33.dir/requires: CMakeFiles/LudumDare33.dir/math/vector2.cpp.obj.requires
 CMakeFiles/LudumDare33.dir/requires: CMakeFiles/LudumDare33.dir/ui/healthbar.cpp.obj.requires
+CMakeFiles/LudumDare33.dir/requires: CMakeFiles/LudumDare33.dir/ui/score.cpp.obj.requires
+CMakeFiles/LudumDare33.dir/requires: CMakeFiles/LudumDare33.dir/ui/gameover.cpp.obj.requires
 
 .PHONY : CMakeFiles/LudumDare33.dir/requires
 

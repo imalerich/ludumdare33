@@ -26,6 +26,8 @@ public:
 	MONSTER(const char * leg_left, const char * leg_right, const char * arm_left, const char *arm_right, const char * body, const char * head);
 	~MONSTER();
 
+	void reset();
+
 	VECTOR2 pos;
 	VECTOR2 size;
 
@@ -38,15 +40,20 @@ public:
 	double getCurrentLane();
 	int num_lanes;
 
+	double lane_offset;
+
 	bool canStompCar();
 	double getRenderedY();
 
+	void drawShadow();
 	void draw();
 	void draw_background();
 	void update();
 
 	void checkInputDown(ALLEGRO_EVENT ev);
 	void checkInputUp(ALLEGRO_EVENT ev);
+
+	VECTOR2 vel;
 
 private:
 	bool directions[4] = { false, false, false, false };
@@ -60,6 +67,7 @@ private:
 	double default_time;
 	bool found_default_speed;
 
+	IMAGE * shadow;
 	IMAGE * body_parts[BODY_PART_COUNT];
 
 	unsigned step_state;
@@ -68,13 +76,10 @@ private:
 	double time;
 	double stall;
 	double head_rot;
-
-	double lane_offset;
 	
 	VECTOR2 leg_offset;
 	VECTOR2 body_offset;
 
-	VECTOR2 vel;
 	VECTOR2 accel;
 };
 

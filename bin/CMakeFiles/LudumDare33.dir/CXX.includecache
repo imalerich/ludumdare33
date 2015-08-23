@@ -397,6 +397,10 @@ objects/carspawner.h
 C:/Users/ianma/Development/ludumdare33/src/objects/carspawner.h
 ui/healthbar.h
 C:/Users/ianma/Development/ludumdare33/src/ui/healthbar.h
+ui/score.h
+C:/Users/ianma/Development/ludumdare33/src/ui/score.h
+ui/gameover.h
+C:/Users/ianma/Development/ludumdare33/src/ui/gameover.h
 math/vector2.h
 C:/Users/ianma/Development/ludumdare33/src/math/vector2.h
 
@@ -447,6 +451,8 @@ C:/Users/ianma/Development/ludumdare33/src/objects/car.h
 C:/Users/ianma/Development/ludumdare33/src/gameprefix.h
 ../math/vector2.h
 C:/Users/ianma/Development/ludumdare33/src/math/vector2.h
+monster.h
+C:/Users/ianma/Development/ludumdare33/src/objects/monster.h
 
 C:/Users/ianma/Development/ludumdare33/src/objects/carspawner.cpp
 iostream
@@ -520,6 +526,20 @@ C:/Users/ianma/Development/ludumdare33/src/math/vector2.h
 image.h
 C:/Users/ianma/Development/ludumdare33/src/objects/image.h
 
+C:/Users/ianma/Development/ludumdare33/src/ui/gameover.cpp
+gameover.h
+C:/Users/ianma/Development/ludumdare33/src/ui/gameover.h
+../objects/camera.h
+C:/Users/ianma/Development/ludumdare33/src/objects/camera.h
+iostream
+-
+
+C:/Users/ianma/Development/ludumdare33/src/ui/gameover.h
+../gameprefix.h
+C:/Users/ianma/Development/ludumdare33/src/gameprefix.h
+../objects/image.h
+C:/Users/ianma/Development/ludumdare33/src/objects/image.h
+
 C:/Users/ianma/Development/ludumdare33/src/ui/healthbar.cpp
 healthbar.h
 C:/Users/ianma/Development/ludumdare33/src/ui/healthbar.h
@@ -527,6 +547,18 @@ C:/Users/ianma/Development/ludumdare33/src/ui/healthbar.h
 C:/Users/ianma/Development/ludumdare33/src/objects/camera.h
 
 C:/Users/ianma/Development/ludumdare33/src/ui/healthbar.h
+../gameprefix.h
+C:/Users/ianma/Development/ludumdare33/src/gameprefix.h
+../objects/image.h
+C:/Users/ianma/Development/ludumdare33/src/objects/image.h
+
+C:/Users/ianma/Development/ludumdare33/src/ui/score.cpp
+score.h
+C:/Users/ianma/Development/ludumdare33/src/ui/score.h
+iostream
+-
+
+C:/Users/ianma/Development/ludumdare33/src/ui/score.h
 ../gameprefix.h
 C:/Users/ianma/Development/ludumdare33/src/gameprefix.h
 ../objects/image.h

@@ -409,6 +409,33 @@ objects/monster.cpp.s:
 	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/objects/monster.cpp.s
 .PHONY : objects/monster.cpp.s
 
+ui/gameover.obj: ui/gameover.cpp.obj
+
+.PHONY : ui/gameover.obj
+
+# target to build an object file
+ui/gameover.cpp.obj:
+	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/ui/gameover.cpp.obj
+.PHONY : ui/gameover.cpp.obj
+
+ui/gameover.i: ui/gameover.cpp.i
+
+.PHONY : ui/gameover.i
+
+# target to preprocess a source file
+ui/gameover.cpp.i:
+	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/ui/gameover.cpp.i
+.PHONY : ui/gameover.cpp.i
+
+ui/gameover.s: ui/gameover.cpp.s
+
+.PHONY : ui/gameover.s
+
+# target to generate assembly for a file
+ui/gameover.cpp.s:
+	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/ui/gameover.cpp.s
+.PHONY : ui/gameover.cpp.s
+
 ui/healthbar.obj: ui/healthbar.cpp.obj
 
 .PHONY : ui/healthbar.obj
@@ -435,6 +462,33 @@ ui/healthbar.s: ui/healthbar.cpp.s
 ui/healthbar.cpp.s:
 	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/ui/healthbar.cpp.s
 .PHONY : ui/healthbar.cpp.s
+
+ui/score.obj: ui/score.cpp.obj
+
+.PHONY : ui/score.obj
+
+# target to build an object file
+ui/score.cpp.obj:
+	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/ui/score.cpp.obj
+.PHONY : ui/score.cpp.obj
+
+ui/score.i: ui/score.cpp.i
+
+.PHONY : ui/score.i
+
+# target to preprocess a source file
+ui/score.cpp.i:
+	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/ui/score.cpp.i
+.PHONY : ui/score.cpp.i
+
+ui/score.s: ui/score.cpp.s
+
+.PHONY : ui/score.s
+
+# target to generate assembly for a file
+ui/score.cpp.s:
+	$(MAKE) -f CMakeFiles\LudumDare33.dir\build.make CMakeFiles/LudumDare33.dir/ui/score.cpp.s
+.PHONY : ui/score.cpp.s
 
 # Help Target
 help:
@@ -476,9 +530,15 @@ help:
 	@echo ... objects/monster.obj
 	@echo ... objects/monster.i
 	@echo ... objects/monster.s
+	@echo ... ui/gameover.obj
+	@echo ... ui/gameover.i
+	@echo ... ui/gameover.s
 	@echo ... ui/healthbar.obj
 	@echo ... ui/healthbar.i
 	@echo ... ui/healthbar.s
+	@echo ... ui/score.obj
+	@echo ... ui/score.i
+	@echo ... ui/score.s
 .PHONY : help
 
 

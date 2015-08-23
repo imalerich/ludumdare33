@@ -34,6 +34,8 @@ add_executable(LudumDare33
 	objects/car.cpp
 	math/vector2.cpp
 	ui/healthbar.cpp
+	ui/score.cpp
+	ui/gameover.cpp
 )
 
 # Include Allegro libraries
