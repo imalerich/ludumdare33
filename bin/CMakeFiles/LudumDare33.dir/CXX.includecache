@@ -499,6 +499,8 @@ iostream
 -
 cstdlib
 -
+algorithm
+-
 
 C:/Users/ianma/Development/ludumdare33/src/objects/monster.h
 ../gameprefix.h

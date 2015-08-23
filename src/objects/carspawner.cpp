@@ -64,9 +64,15 @@ void CARSPAWNER::checkCarStomps(MONSTER * monster) {
 	}
 
 	for (std::vector<CAR>::iterator it = cars.begin(); it != cars.end(); it++) {
-		if (it->pos.x < monster->pos.x + monster->size.x && 
-			it->pos.x + image->size.x > monster->pos.x &&
-			(int)it->pos.y == monster->current_lane &&
+		double carX = it->pos.x;
+		double carWidth = image->size.x;
+
+		double monsterX = monster->pos.x;
+		double monsterWidth = monster->size.x;
+
+		if (carX < monsterX + (monsterWidth * 7/8.0) && 
+			carX + carWidth > monsterX + (monsterWidth * 1/8.0) &&
+			(int)it->pos.y == monster->getCurrentLane() &&
 			!it->is_falling) {
 			double speed = 1500;
 			double r = ((rand() % 1000)/1000.0) * (2 * M_PI);

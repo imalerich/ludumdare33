@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <iostream>
 #include <cstdlib>
+#include <algorithm>
 
 #define MAX_JUMP_CHARGE 1300.0
 #define GRAVITY_ACCEL 3000 
@@ -59,6 +60,10 @@ void MONSTER::checkInput(ALLEGRO_EVENT ev) {
 		
 		break;
 	}
+}
+
+double MONSTER::getCurrentLane() {
+	return std::abs(lane_offset / lane_height);
 }
 
 bool MONSTER::isOnGround() {

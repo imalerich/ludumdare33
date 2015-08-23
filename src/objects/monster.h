@@ -31,6 +31,7 @@ public:
 	double max_y_pos;
 	double lane_height;
 
+	double getCurrentLane();
 	int current_lane;
 	int num_lanes;
 
