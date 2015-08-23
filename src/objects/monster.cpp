@@ -70,6 +70,15 @@ void MONSTER::checkInputDown(ALLEGRO_EVENT ev) {
 	case ALLEGRO_KEY_RIGHT:
 		directions[KEY_RIGHT] = true;
 		break;
+
+	case ALLEGRO_KEY_SPACE:
+		if (isOnGround()) {
+			jump_move_speed = speed;
+			vel.y = -MAX_JUMP_CHARGE;
+			was_jumping = true;
+		}
+		
+		break;
 	}
 }
 
