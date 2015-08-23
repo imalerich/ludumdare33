@@ -7,6 +7,8 @@
 #include <algorithm>
 #include <cmath>
 
+#include "camera.h"
+
 #define MAX_JUMP_CHARGE 1300.0
 #define GRAVITY_ACCEL 3000 
 #define LANE_CHANGE_SPEED 150
@@ -31,6 +33,7 @@ MONSTER::MONSTER(const char * LEG_LEFT, const char * LEG_RIGHT, const char * ARM
 
 	health = 1.0;
 
+	was_jumping = false;
 	jump_move_speed = 0.0;
 	default_speed = 0.0;
 	default_time = 0.0;
@@ -94,6 +97,7 @@ void MONSTER::checkInputUp(ALLEGRO_EVENT ev) {
 		if (isOnGround()) {
 			jump_move_speed = speed;
 			vel.y = -MAX_JUMP_CHARGE;
+			was_jumping = true;
 		}
 		
 		break;
@@ -245,6 +249,11 @@ void MONSTER::updatePos() {
 	pos.y += vel.y * (1.0 / FRAME_RATE);
 
 	if (pos.y >= max_y_pos) {
+		if (was_jumping) {
+			was_jumping = false;
+			camera.cam_shake += 5.0;
+		}
+
 		vel.y = 0.0;
 		pos.y = max_y_pos;
 	}

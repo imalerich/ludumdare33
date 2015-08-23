@@ -54,6 +54,7 @@ private:
 	bool isOnGround();
 	void updatePos();
 
+	bool was_jumping;
 	double jump_move_speed;
 	double default_speed;
 	double default_time;

@@ -81,6 +81,8 @@ int main(int argc, char **argv) {
 				camera.pos.x = player->pos.x + player->size.x - SCREENW;
 			}
 
+			camera.update();
+
 			spawner->checkCarStomps(player);
 			bullets->checkBulletHits(player);
 		}

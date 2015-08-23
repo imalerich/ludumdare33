@@ -502,6 +502,7 @@ CMakeFiles/LudumDare33.dir/objects/monster.cpp.obj: C:/Users/ianma/Development/l
 CMakeFiles/LudumDare33.dir/objects/monster.cpp.obj: C:/Users/ianma/Development/ludumdare33/src/allegro/include/allegro5/utf8.h
 CMakeFiles/LudumDare33.dir/objects/monster.cpp.obj: C:/Users/ianma/Development/ludumdare33/src/gameprefix.h
 CMakeFiles/LudumDare33.dir/objects/monster.cpp.obj: C:/Users/ianma/Development/ludumdare33/src/math/vector2.h
+CMakeFiles/LudumDare33.dir/objects/monster.cpp.obj: C:/Users/ianma/Development/ludumdare33/src/objects/camera.h
 CMakeFiles/LudumDare33.dir/objects/monster.cpp.obj: C:/Users/ianma/Development/ludumdare33/src/objects/image.h
 CMakeFiles/LudumDare33.dir/objects/monster.cpp.obj: C:/Users/ianma/Development/ludumdare33/src/objects/monster.cpp
 CMakeFiles/LudumDare33.dir/objects/monster.cpp.obj: C:/Users/ianma/Development/ludumdare33/src/objects/monster.h
