@@ -29,6 +29,8 @@ MONSTER::MONSTER(const char * LEG_LEFT, const char * LEG_RIGHT, const char * ARM
 	IMAGE * head = body_parts[MONSTER_HEAD];
 	size = head->size;
 
+	health = 1.0;
+
 	jump_move_speed = 0.0;
 	default_speed = 0.0;
 	default_time = 0.0;
@@ -107,7 +109,7 @@ bool MONSTER::isOnGround() {
 }
 
 bool MONSTER::canStompCar() {
-	return !isOnGround() && (vel.y > 0) && (pos.y > -5);
+	return !isOnGround() && (vel.y > 0) && (pos.y > (max_y_pos - 10));
 }
 
 double MONSTER::getDefaultSpeed() {

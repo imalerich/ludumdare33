@@ -16,7 +16,7 @@ HEALTHBAR::~HEALTHBAR() {
 }
 
 void HEALTHBAR::draw() {
-	double x = (SCREENW - health_bar->size.x);
+	double x = (SCREENW - health_bar->size.x - 30);
 	health_bottom->draw(VECTOR2(camera.pos.x + x, camera.pos.y));
 	health_bar->draw(VECTOR2(camera.pos.x + x, camera.pos.y), VECTOR2(88, 0) , 0, current_health, 1.0);
 	health_top->draw(VECTOR2(camera.pos.x + x, camera.pos.y));

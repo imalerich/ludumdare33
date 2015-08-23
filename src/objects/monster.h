@@ -29,6 +29,8 @@ public:
 	VECTOR2 pos;
 	VECTOR2 size;
 
+	double health;
+
 	double max_y_pos;
 	double lane_height;
 

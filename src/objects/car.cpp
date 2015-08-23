@@ -3,7 +3,7 @@
 #include <iostream>
 
 #define ROTATION_SPEED 8*M_PI
-#define SCALE_SPEED -1.0
+#define SCALE_SPEED 0.0
 
 CAR::CAR(VECTOR2 POS) {
 	pos = POS;

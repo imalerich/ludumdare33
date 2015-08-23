@@ -25,7 +25,7 @@ int main(int argc, char **argv) {
 
 	srand(time(NULL));
 
-	al_clear_to_color(al_map_rgb(139, 217, 252));
+	al_clear_to_color(al_map_rgb(18, 15, 12));
 	al_flip_display();
 
 	MONSTER * player = new MONSTER("assets/player/legl.png", "assets/player/legr.png", "assets/player/arml.png", "assets/player/armr.png", "assets/player/body.png", "assets/player/head.png");
@@ -40,7 +40,6 @@ int main(int argc, char **argv) {
 	double lane_height = (max_y - min_y)/3;
 	CARSPAWNER * spawner = new CARSPAWNER("assets/objects/car.png", min_y, max_y);
 	CARSPAWNER * bullets = new CARSPAWNER("assets/objects/bullet.png", min_y, max_y);
-	IMAGE * hearts = new IMAGE("assets/background.png");
 
 	// set the players position to the center of the screen
 	player->pos.y = SCREENH - player->size.y - 63;
@@ -65,6 +64,8 @@ int main(int argc, char **argv) {
 			bullets->update();
 			spawner->update();
 			player->update();
+
+			health->current_health = player->health;
 
 			camera.pos.x += player->getDefaultSpeed() * (1.0 / FRAME_RATE);
 
@@ -97,10 +98,9 @@ int main(int argc, char **argv) {
 
 		if (redraw) {
 			redraw = false;
-			al_clear_to_color(al_map_rgb(139, 217, 252));
+			al_clear_to_color(al_map_rgb(18, 15, 12));
 
 			// draw shit goes here
-			hearts->draw(camera.pos);
 			street->draw();
 			bg_2->draw();
 			bg_1->draw();
@@ -117,7 +117,7 @@ int main(int argc, char **argv) {
 					player->draw();
 			}
 
-			// health->draw();
+			health->draw();
 
 			al_flip_display();
 		}
@@ -131,7 +131,6 @@ int main(int argc, char **argv) {
 	delete spawner;
 	delete bullets;
 	delete health;
-	delete hearts;
 
 	release_allegro();
 	return 0;
