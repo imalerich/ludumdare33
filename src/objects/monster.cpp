@@ -71,7 +71,7 @@ bool MONSTER::canStompCar() {
 
 void MONSTER::updatePos() {
 	double radius = 10;
-	double speed = 5.0;
+	double speed = 13.0;
 
 	double time_accel = 0.7 + (time/M_PI);
 	time += (1.0 / FRAME_RATE) * (speed  * time_accel);
