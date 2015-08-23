@@ -5,7 +5,7 @@
 #include <iostream>
 #include <cstdlib>
 
-#define MAX_JUMP_CHARGE 800.0
+#define MAX_JUMP_CHARGE 1300.0
 #define GRAVITY_ACCEL 3000 
 
 MONSTER::MONSTER(const char * LEG_LEFT, const char * LEG_RIGHT, const char * ARM_LEFT, const char * ARM_RIGHT, const char * BODY, const char * HEAD) {
@@ -66,7 +66,7 @@ bool MONSTER::isOnGround() {
 }
 
 bool MONSTER::canStompCar() {
-	return !isOnGround() && (vel.y > 100);
+	return !isOnGround() && (vel.y > 0) && (pos.y > -5);
 }
 
 void MONSTER::updatePos() {
