@@ -100,6 +100,10 @@ void MONSTER::checkInputUp(ALLEGRO_EVENT ev) {
 	}
 }
 
+double MONSTER::getRenderedY() {
+	return pos.y - lane_offset;
+}
+
 double MONSTER::getCurrentLane() {
 	return std::abs(lane_offset / lane_height);
 }

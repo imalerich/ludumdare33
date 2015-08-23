@@ -67,6 +67,10 @@ int main(int argc, char **argv) {
 
 			health->current_health = player->health;
 
+			if (player->health <= 0.0) {
+				GAME_OVER = true;
+			}
+
 			camera.pos.x += player->getDefaultSpeed() * (1.0 / FRAME_RATE);
 
 			if (player->pos.x < camera.pos.x) {
@@ -78,6 +82,7 @@ int main(int argc, char **argv) {
 			}
 
 			spawner->checkCarStomps(player);
+			bullets->checkBulletHits(player);
 		}
 
 		if (ev.type == ALLEGRO_EVENT_KEY_UP) {

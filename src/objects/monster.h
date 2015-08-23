@@ -39,6 +39,7 @@ public:
 	int num_lanes;
 
 	bool canStompCar();
+	double getRenderedY();
 
 	void draw();
 	void draw_background();

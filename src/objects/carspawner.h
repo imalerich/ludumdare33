@@ -17,6 +17,7 @@ public:
 	void update();
 
 	void checkCarStomps(MONSTER * monster);
+	void checkBulletHits(MONSTER * monster);
 
 private:
 	double time;

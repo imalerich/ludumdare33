@@ -85,3 +85,23 @@ void CARSPAWNER::checkCarStomps(MONSTER * monster) {
 		}
 	}
 }
+
+void CARSPAWNER::checkBulletHits(MONSTER * monster) {
+	for (std::vector<CAR>::iterator it = cars.begin(); it != cars.end(); it++) {
+		double carX = it->pos.x;
+		double carWidth = image->size.x;
+
+		double monsterX = monster->pos.x;
+		double monsterWidth = monster->size.x;
+
+		if (carX < monsterX + (monsterWidth * 2/3.0) && 
+			carX + carWidth > monsterX + (monsterWidth * 1/3.0) &&
+			(int)it->pos.y == monster->getCurrentLane() && 
+			!(monster->max_y_pos - monster->pos.y > 100)) {
+
+			it->pos.y += SCREENH;
+			monster->health = std::max(monster->health - 0.1, 0.0);
+
+		}
+	}
+}
